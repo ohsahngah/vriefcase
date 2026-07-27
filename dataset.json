@@ -1,6 +1,6 @@
 {
-  "title": "vell-repositories",
-  "description": "repositories of vell",
+  "title": "vriefcase",
+  "description": "vriefcase: the virtual briefcase for git",
   "administrator": "ohsahngah",
   "contact": "ohsahngah@gmail.com",
   "createdAt": "2026-07-23T01:07:43Z",
@@ -10,13 +10,13 @@
   "website": null,
   "callCount": 90,
   "recommendationList": [
-    "vell",
+    "vriefcase",
     "jquery"
   ],
   "repositories": [
     {
-      "title": "vell",
-      "description": "virtual bell",
+      "title": "vriefcase",
+      "description": "vriefcase: the virtual briefcase for git",
       "repository": "github:ohsahngah/vell",
       "branch": null,
       "website": null,
