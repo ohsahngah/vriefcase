@@ -1,0 +1,62 @@
+{
+  "title": "vell-repositories",
+  "description": "repositories of vell",
+  "administrator": "ohsahngah",
+  "contact": "ohsahngah@gmail.com",
+  "createdAt": "2026-07-23T01:07:43Z",
+  "updatedAt": "2026-07-23T01:07:43Z",
+  "isActive": true,
+  "totalCount": 4,
+  "website": null,
+  "callCount": 90,
+  "recommendationList": [
+    "vell",
+    "jquery"
+  ],
+  "repositories": [
+    {
+      "title": "vell",
+      "description": "virtual bell",
+      "repository": "github:ohsahngah/vell",
+      "branch": null,
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "ohsahngah@gmail.com",
+      "starRate": 4
+    },
+    {
+      "title": "test",
+      "description": "test project",
+      "repository": "github:ohsahngah/test",
+      "branch": null,
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "ohsahngah@gmail.com",
+      "starRate": 3
+    },
+    {
+      "title": "test2",
+      "description": "test2 project",
+      "repository": "github:ohsahngah/test2",
+      "branch": null,
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "ohsahngah@gmail.com",
+      "starRate": 0
+    },
+    {
+      "title": "jquery",
+      "description": "javascript library",
+      "repository": "github:jquery/jquery",
+      "branch": "3.6-stable",
+      "website": "https://jquery.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "timmywil@hachyderm.io",
+      "starRate": 5
+    }
+  ]
+}
