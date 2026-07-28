@@ -48,7 +48,7 @@
       "starRate": 4
     },
     {
-      "title": "ladda",
+      "title": "Ladda",
       "description": "Buttons with built-in loading indicators",
       "repository": "github:hakimel/ladda",
       "branch": "master",
@@ -59,7 +59,51 @@
       "starRate": 2
     },
     {
-      "title": "jquery",
+      "title": "Docsify",
+      "description": "A magical documentation site generator",
+      "repository": "github:docsifyjs/docsify",
+      "branch": "develop",
+      "website": "https://docsify.js.org",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "maintainers@docsifyjs.org",
+      "starRate": 2
+    },
+    {
+      "title": "Gitfolio",
+      "description": "personal website + blog for every github user",
+      "repository": "github:imfunniee/gitfolio",
+      "branch": "master",
+      "website": "https://imfunniee.github.io/gitfolio",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@imfunniee",
+      "starRate": 1
+    },
+    {
+      "title": "AdminLTE",
+      "description": "Free admin dashboard template based on Bootstrap 5",
+      "repository": "github:ColorlibHQ/AdminLTE",
+      "branch": "master",
+      "website": "https://colorlib.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@colorlib",
+      "starRate": 1
+    },
+    {
+      "title": "bootstrap-icons",
+      "description": "Official open source SVG icon library for Bootstrap",
+      "repository": "github:twbs/icons",
+      "branch": "main",
+      "website": "https://icons.getbootstrap.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@getbootstrap",
+      "starRate": 1
+    },
+    {
+      "title": "jQuery",
       "description": "javascript library",
       "repository": "github:jquery/jquery",
       "branch": "3.6-stable",
