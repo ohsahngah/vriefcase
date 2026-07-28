@@ -112,6 +112,17 @@
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": "timmywil@hachyderm.io",
       "starRate": 5
-    }
+    },
+    {
+      "title": "http-server",
+      "description": "A simple, zero-configuration, command-line http server",
+      "repository": "github:http-party/http-server",
+      "branch": "master",
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": null,
+      "starRate": 1
+    },
   ]
 }
