@@ -23,29 +23,40 @@
       "createdAt": "2026-07-23T01:07:43Z",
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": "ohsahngah@gmail.com",
-      "starRate": 4
+      "starRate": 0
     },
     {
-      "title": "test",
-      "description": "test project",
-      "repository": "github:ohsahngah/test",
-      "branch": null,
+      "title": "json-server",
+      "description": "Get a full fake REST API with zero coding in less than 30 seconds",
+      "repository": "github:typicode/json-server",
+      "branch": "main",
       "website": null,
       "createdAt": "2026-07-23T01:07:43Z",
       "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "ohsahngah@gmail.com",
+      "contact": "typicode@gmail.com",
       "starRate": 3
     },
     {
-      "title": "test2",
-      "description": "test2 project",
-      "repository": "github:ohsahngah/test2",
-      "branch": null,
-      "website": null,
+      "title": "reveal.js",
+      "description": "The HTML Presentation Framework",
+      "repository": "github:hakimel/reveal.js",
+      "branch": "master",
+      "website": "https://hakim.se",
       "createdAt": "2026-07-23T01:07:43Z",
       "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "ohsahngah@gmail.com",
-      "starRate": 0
+      "contact": "hakim.elhattab@gmail.com",
+      "starRate": 4
+    },
+    {
+      "title": "ladda",
+      "description": "Buttons with built-in loading indicators",
+      "repository": "github:hakimel/ladda",
+      "branch": "master",
+      "website": "https://hakim.se",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "hakim.elhattab@gmail.com",
+      "starRate": 2
     },
     {
       "title": "jquery",
