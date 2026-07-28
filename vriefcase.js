@@ -20,7 +20,7 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.0.2';
+const ver = 'v0.0.3';
 const DATA_URL = 'https://ohsahngah.github.io/vriefcase/vriefcase.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
@@ -277,11 +277,11 @@ async function main() {
 
     if (args.length === 0) {
         console.log(pc.bold(pc.cyan('Vriefcase')), ver);
-        console.log(pc.dim('The Virtual Briefcase for All Intelligent Beings.\n'));
+        console.log('The Virtual Briefcase for All Intelligent Beings.\n');
         console.log(pc.bold('Usage:'));
-        console.log(`\tvriefcase            : Show help and recommended projects`);
-        console.log(`\tvriefcase ${pc.dim('<project>')}  : Search projects with similar titles`);
-        console.log(`\tvriefcase @${pc.dim('<project>')} : Extract project snapshot with matching title`);
+        console.log(`\tvriefcase                  : Show help and recommended projects`);
+        console.log(`\tvriefcase <project-title>  : Search projects with similar titles`);
+        console.log(`\tvriefcase @<project-title> : Extract project snapshot with matching title`);
 
         // 중복 title이 존재할 경우 경고 메시지 노출
         if (duplicateTitles.size > 0) {
@@ -381,15 +381,17 @@ async function main() {
             console.log(`${r.description}`);
 
             console.log(
-                pc.dim(host + ':' || '') +
-                pc.dim(repoUser + '/' || '') +
-                pc.dim(repoName || '') +
-                pc.dim(branchName ? `#${branchName}` : ''));
+                pc.yellow(host + ':' || '') +
+                pc.yellow(repoUser + '/' || '') +
+                pc.yellow(repoName || '') +
+                pc.yellow(branchName ? `#${branchName}` : ''));
 
             if (r.contact) console.log(`${r.contact}`);
             console.log();
         });
-        console.log(`Total: ${searchResults.length}`);
+        console.log(
+            `Total: ${searchResults.length} ${searchResults.length <= 1 ? 'project' : 'projects'}`
+        );
     }
 }
 
