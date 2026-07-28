@@ -1,7 +1,7 @@
 {
     "name": "vriefcase",
-    "version": "0.0.3",
-    "description": "vriefcase: the virtual briefcase for git",
+    "version": "0.0.4",
+    "description": "vriefcase: the virtual briefcase for all intelligent beings",
     "main": "vriefcase.js",
     "bin": {
         "vriefcase": "./vriefcase.js"
