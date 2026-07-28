@@ -1,6 +1,6 @@
 {
   "title": "vriefcase",
-  "description": "vriefcase: the virtual briefcase for git",
+  "description": "the virtual briefcase for all intelligent beings",
   "administrator": "ohsahngah",
   "contact": "ohsahngah@gmail.com",
   "createdAt": "2026-07-23T01:07:43Z",
@@ -16,8 +16,8 @@
   "repositories": [
     {
       "title": "vriefcase",
-      "description": "vriefcase: the virtual briefcase for git",
-      "repository": "github:ohsahngah/vell",
+      "description": "the virtual briefcase for all intelligent beings",
+      "repository": "github:ohsahngah/vriefcase",
       "branch": null,
       "website": null,
       "createdAt": "2026-07-23T01:07:43Z",
