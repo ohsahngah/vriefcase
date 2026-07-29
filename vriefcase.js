@@ -20,7 +20,7 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.0.4';
+const ver = 'v0.0.7';
 const DATA_URL = 'https://ohsahngah.github.io/vriefcase/vriefcase.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
@@ -49,7 +49,7 @@ async function checkNetwork() {
         await dns.lookup('github.com');
     } catch (error) {
         console.error(pc.red('Error: Online connection required.'));
-        process.exit(1);
+        process.exitCode = 1;
     }
 }
 
@@ -134,7 +134,7 @@ function validateSafePath() {
     if (blocked.includes(cwd)) {
         console.error(pc.red('Error: Safe path required.'));
         console.error(pc.yellow(`Current path: ${process.cwd()}`));
-        process.exit(1);
+        process.exitCode = 1;
     }
 }
 
@@ -177,7 +177,8 @@ async function fetchDataset() {
 
         // console.error(pc.red('Error: Failed to fetch dataset:'), error);
         console.error(pc.red('Error: Failed to fetch dataset.'));
-        process.exit(1);
+        console.error(pc.red('Network connection and firewall settings check required.'));
+        process.exitCode = 1;
     }
 }
 
@@ -248,7 +249,10 @@ async function main() {
     const args = process.argv.slice(2);
 
     await checkNetwork();
+    if (process.exitCode === 1) return;
+
     validateSafePath();
+    if (process.exitCode === 1) return;
 
     const dataset = await fetchDataset();
     const rawRepositories = dataset.repositories || [];
