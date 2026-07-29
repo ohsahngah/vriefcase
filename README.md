@@ -1,11 +1,11 @@
 <div align="center">
     <img width="256" src="https://ohsahngah.github.io/vriefcase/vriefcase.webp" />
-    <p style="font-family: Consolas, monospace; font-size: 20px; color: #00FF00;">
-        - the virtual briefcase for all intelligent beings -
-    </p>
+    <p>- the virtual briefcase for all intelligent beings -</p>
+    <br />
 </div>
 
 ---
+
 ![node](https://img.shields.io/node/v/vriefcase)
 [![npm version](https://img.shields.io/npm/v/vriefcase.svg)](https://www.npmjs.org/package/vriefcase)
 [![install size](https://packagephobia.com/badge?p=vriefcase)](https://packagephobia.com/result?p=vriefcase)
@@ -18,9 +18,10 @@
 
 <br />
 
-**vriefcase** has the following key advantages:
+---
 
-<br />
+**vriefcase** has the following key advantages :
+
 
 <u ><b>Extreme Processing Speed</b></u><br />
 **vriefcase** captures only the minimal, up-to-date snapshot needed at the moment. Because it extracts only pure core files with project metadata removed, the transfer speed is overwhelmingly faster compared to other tools, and it minimizes unnecessary computing resources by reducing the time required for AI to process project history information or analyze parsed content. Naturally, unnecessary or unsafe files are automatically and intelligently removed.
@@ -60,12 +61,12 @@ $ vriefcase
 
 Search projects:
 ```bash
-$ vriefcase vrief
+$ vriefcase server
 ```
 
 Extract project snapshot:
 ```bash
-$ vriefcase @vriefcase
+$ vriefcase @http-server
 ```
 
 <br />
@@ -79,5 +80,7 @@ $ vriefcase @vriefcase
 - [OhSahngAh](https://github.com/ohsahngah) / Started Vriefcase
 - [ParkBumChan](bumchanpak@gmail.com) / Main Contributor
 - [ChoeJeongHun](issgnb@gmail.com) / Main Contributor
+
+<br />
 
 Become a contributor to **Vriefcase**! Attaining contributor status gives you the right to propose agenda items and vote on the future of **Vriefcase**. Additionally, you will be listed in the contributor section of the README file with a link back to you. [[Become a sponsor]()]
