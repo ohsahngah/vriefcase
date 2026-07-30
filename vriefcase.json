@@ -10,8 +10,9 @@
   "website": null,
   "callCount": 90,
   "recommendationList": [
-    "vriefcase",
-    "jquery"
+    "html5-boilerplate",
+    "http-server",
+    "json-server"
   ],
   "repositories": [
     {
