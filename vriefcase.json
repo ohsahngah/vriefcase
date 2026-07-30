@@ -26,6 +26,17 @@
       "starRate": 0
     },
     {
+      "title": "html5-boilerplate",
+      "description": "A professional front-end template for building fast, robust, and adaptable web apps or sites",
+      "repository": "github:h5bp/html5-boilerplate",
+      "branch": "main",
+      "website": "https://html5boilerplate.com/",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "appleboy.tw@gmail.com",
+      "starRate": 3
+    },
+    {
       "title": "json-server",
       "description": "Get a full fake REST API with zero coding in less than 30 seconds",
       "repository": "github:typicode/json-server",
