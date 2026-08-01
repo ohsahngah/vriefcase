@@ -10,11 +10,67 @@
   "website": null,
   "callCount": 90,
   "recommendationList": [
-    "html5-boilerplate",
-    "http-server",
-    "json-server"
+    "Pretendard",
+    "D2Coding",
+    "Iosevka",
+    "JetBrainsMono"
   ],
   "repositories": [
+    {
+      "title": "D2Coding",
+      "description": "Korean-supporting monospaced font for developers by Naver",
+      "repository": "github:naver/d2-coding-font",
+      "branch": "master",
+      "website": "https://naver.github.io/d2-coding-font",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "opensource@navercorp.com",
+      "starRate": 5
+    },
+    {
+      "title": "Sarasa-Gothic",
+      "description": "Iosevka-based CJK(Chinese, Japanese, Korean) monospaced coding font",
+      "repository": "github:be5invis/Sarasa-Gothic",
+      "branch": "main",
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "belleve@invis.moe",
+      "starRate": 4
+    },
+    {
+      "title": "Iosevka",
+      "description": "highly customizable open-source monospaced coding font",
+      "repository": "github:be5invis/Iosevka",
+      "branch": "main",
+      "website": "https://typeof.net/Iosevka",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "belleve@invis.moe",
+      "starRate": 4
+    },
+    {
+      "title": "Pretendard",
+      "description": "Korea's standard open-source Korean UI font",
+      "repository": "github:orioncactus/pretendard",
+      "branch": "main",
+      "website": "https://cactus.tistory.com/306",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "orioncactus@gmail.com",
+      "starRate": 5
+    },
+    {
+      "title": "JetBrainsMono",
+      "description": "free and open-source developer font",
+      "repository": "github:JetBrains/JetBrainsMono",
+      "branch": "master",
+      "website": "https://www.jetbrains.com/ko-kr/lp/mono",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "github@jetbrains.com",
+      "starRate": 4
+    },
     {
       "title": "vriefcase",
       "description": "the virtual briefcase for all intelligent beings",
@@ -35,7 +91,7 @@
       "createdAt": "2026-07-23T01:07:43Z",
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": "appleboy.tw@gmail.com",
-      "starRate": 3
+      "starRate": 2
     },
     {
       "title": "json-server",
@@ -104,6 +160,17 @@
       "starRate": 1
     },
     {
+      "title": "Bootstrap",
+      "description": "popular HTML, CSS, JS framework for responsive, mobile-first web development",
+      "repository": "github:twbs/bootstrap",
+      "branch": "main",
+      "website": "https://getbootstrap.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@getbootstrap",
+      "starRate": 5
+    },
+    {
       "title": "bootstrap-icons",
       "description": "Official open source SVG icon library for Bootstrap",
       "repository": "github:twbs/icons",
@@ -112,7 +179,7 @@
       "createdAt": "2026-07-23T01:07:43Z",
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": "@getbootstrap",
-      "starRate": 1
+      "starRate": 3
     },
     {
       "title": "jQuery",
@@ -134,7 +201,7 @@
       "createdAt": "2026-07-23T01:07:43Z",
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": null,
-      "starRate": 1
+      "starRate": 2
     }
   ]
 }
