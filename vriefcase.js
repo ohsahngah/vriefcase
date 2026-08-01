@@ -20,7 +20,7 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.0.7';
+const ver = 'v0.1.1';
 const DATA_URL = 'https://ohsahngah.github.io/vriefcase/vriefcase.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
@@ -34,13 +34,14 @@ const ALLOWED_HOSTS = [
     'bitbucket'
 ];
 
-// 삭제하고 싶은 폴더나 파일 이름 추가
+// 삭제하고 싶은 디렉터리나 파일 이름 추가
 const REMOVE_TARGETS = [
-    '.github'
+    '.github',
+    '.vscode'
 ];
 
 function hyperlink(text, url) {
-  return `\u001B]8;;${url}\u0007${text}\u001B]8;;\u0007`;
+    return `\u001B]8;;${url}\u0007${text}\u001B]8;;\u0007`;
 }
 
 // 온라인 상태(인터넷 연결) 확인
@@ -200,7 +201,8 @@ async function extractSnapshot(repo) {
 
     if (branchName) {
         degitPath += `#${branchName}`;
-        console.log(`Extracting snapshot of branch '${branchName}' of '${repo.title}' to '${destPath}'...`);
+        console.log(`Extracting snapshot of '${repo.title}' (branch: ${branchName}) to '${destPath}'...`);
+
     } else {
         console.log(`Extracting snapshot of '${repo.title}' to '${destPath}'...`);
     }
@@ -239,7 +241,7 @@ async function extractSnapshot(repo) {
         } else if (error.code === 'COULD_NOT_DOWNLOAD') {
             console.error(pc.red('Error: Network connection and project info check required.'));
         } else {
-            console.error(pc.red(`Error detail: ${error.message}`));
+            console.error(pc.red(`Error details: ${error.message}`));
         }
     }
 }
@@ -283,14 +285,14 @@ async function main() {
         console.log(pc.bold(pc.cyan('Vriefcase')), ver);
         console.log('The Virtual Briefcase for All Intelligent Beings.\n');
         console.log(pc.bold('Usage:'));
-        console.log(`\tvriefcase                  : Show help and recommended projects`);
-        console.log(`\tvriefcase <project-title>  : Search projects with similar titles`);
-        console.log(`\tvriefcase @<project-title> : Extract project snapshot with matching title`);
+        console.log(`\tvriefcase                  : Show help and recommended projects.`);
+        console.log(`\tvriefcase <project-title>  : Search for similar projects.`);
+        console.log(`\tvriefcase @<project-title> : Extract a clean project snapshot.`);
 
         // 중복 title이 존재할 경우 경고 메시지 노출
         if (duplicateTitles.size > 0) {
-            console.log('\n' + pc.yellow(`Warning: Duplicate project removal required (${Array.from(duplicateTitles).join(', ')}).`));
-            console.log(pc.yellow(`Safely merged based on the last registered project.`));
+            console.log('\n' + pc.yellow(`Warning: Duplicate project titles detected (${Array.from(duplicateTitles).join(', ')}).`));
+            console.log(pc.yellow(`Using the last registered project.`));
         }
 
         console.log(pc.bold('\nRecommended:'));
@@ -300,7 +302,7 @@ async function main() {
             console.log(pc.yellow('\tNo recommended projects available.'));
         } else {
             recommendedRepos.forEach((r, idx) => {
-                console.log(`\t${pc.bold(pc.cyan(r.title))} (${getStarRateString(r.starRate)}) ${r.description}`);
+                console.log(`\t${pc.bold(pc.cyan(r.title))} (${getStarRateString(r.starRate)})`);
             });
         }
         return;
@@ -312,8 +314,8 @@ async function main() {
     if (query.startsWith('@')) {
         const exactTitle = query.slice(1).trim();
 
-        if (exactTitle.length < 3) {
-            console.error(pc.red('Error: Minimum 3 characters required (excluding @)'));
+        if (exactTitle.length < 2) {
+            console.error(pc.red('Error: Minimum 2 characters required (excluding @).'));
             return;
         }
 
@@ -326,7 +328,7 @@ async function main() {
 
         if (repo.starRate === 0) {
             console.log(pc.red(`Error: Untrusted project.`));
-            console.log(pc.red('Please contact the project maintainer'));
+            console.log(pc.red('Please contact the project maintainer.'));
             return;
         }
 
@@ -335,17 +337,29 @@ async function main() {
     }
 
     // 검색 분기
-    if (query.length < 3) {
-        console.error(pc.red('Error: Minimum 3 characters required.'));
+    if (query.length < 2) {
+        console.error(pc.red('Error: Minimum 2 characters required.'));
         return;
     }
 
+    // title과 description을 모두 검색 대상으로 포함
+    // 입력된 모든 검색 인자를 소문자로 변환하여 배열로 준비
+    const searchTerms = args.map(arg => arg.toLowerCase());
+
     const searchResults = repositories
-        .filter(r => r.title.toLowerCase().includes(query.toLowerCase()))
+        .filter(r => {
+            const titleStr = (r.title || '').toLowerCase();
+            const descStr = (r.description || '').toLowerCase();
+            
+            // 모든 검색어(term)가 title이나 description에 포함되어 있는지 확인 (AND 조건)
+            return searchTerms.every(term => 
+                titleStr.includes(term) || descStr.includes(term)
+            );
+        })
         .sort((a, b) => (b.starRate || 0) - (a.starRate || 0));
 
     if (searchResults.length === 0) {
-        console.log(pc.red('Error: Valid project title required.'));
+        console.log(pc.red('Error: Valid project title or description required.'));
     } else {
         console.log();
         searchResults.forEach(r => {
@@ -388,7 +402,8 @@ async function main() {
                 pc.yellow(host + ':' || '') +
                 pc.yellow(repoUser + '/' || '') +
                 pc.yellow(repoName || '') +
-                pc.yellow(branchName ? `#${branchName}` : ''));
+                pc.yellow(branchName ? `#${branchName}` : '')
+            );
 
             if (r.contact) console.log(`${r.contact}`);
             console.log();
