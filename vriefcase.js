@@ -319,7 +319,7 @@ async function main() {
             return;
         }
 
-        const repo = repositories.find(r => r.title === exactTitle);
+        const repo = repositories.find(r => r.title.toLowerCase() === exactTitle.toLowerCase());
 
         if (!repo) {
             console.log(pc.red('Error: Valid project title required.'));
