@@ -23,8 +23,8 @@
 **vriefcase** has the following key advantages :
 
 
-<u ><b>Extreme Processing Speed</b></u><br />
-**vriefcase** captures only the minimal, up-to-date snapshot needed at the moment. Because it extracts only pure core files with project metadata removed, the transfer speed is overwhelmingly faster compared to other tools, and it minimizes unnecessary computing resources by reducing the time required for AI to process project history information or analyze parsed content. Naturally, unnecessary or unsafe files are automatically and intelligently removed.
+<u ><b>Pure & Lightweight Extraction</b></u><br />
+**vriefcase** captures only the pristine, minimal snapshot you need right now. By extracting pure core files and stripping away heavy project metadata, it completely eliminates unnecessary noise. This lightweight approach not only delivers overwhelmingly fast transfer speeds but also drastically reduces the computing resources required for AI agents to process or analyze the codebase. Naturally, any unsafe or irrelevant files are automatically and intelligently filtered out.
 
 <br />
 
@@ -38,8 +38,8 @@
 
 <br />
 
-<u><b>Zero-Touch Provisioning</b></u><br />
-**vriefcase** has no prompts or interactive UIs waiting for human input. Therefore, you can identify and extract the required project snapshot with just a single command. This makes it highly ideal for CI/CD pipelines and automation.
+<u><b>Zero-Friction Execution</b></u><br />
+**vriefcase** operates entirely without prompts or interactive UIs interrupting your workflow. A single command is all it takes to instantly identify and extract the exact project snapshot you need. This seamless, non-interactive approach makes it the perfect tool for CI/CD pipelines, shell scripting, and full automation.
 
 <br />
 
@@ -68,6 +68,19 @@ Extract project snapshot:
 ```bash
 $ vriefcase @http-server
 ```
+
+<br />
+
+<b>Convenient Clue Search?</b><br />
+vriefcase features an incredibly intuitive "Clue Search" capability. You don't need to know the exact project name to find what you're looking for; simply list any related keywords or clues that come to mind. For example, if you want to extract a font-related project to your local machine, just type:
+```bash
+$ vriefcase font
+```
+and a list of relevant projects will immediately appear.  Providing multiple clues allows for an even more precise search. For instance, if you are looking for a "monospaced developer font project that supports Korean," you can enter: 
+```bash
+$ vriefcase font coding korean
+```
+Leverage vriefcase's Clue Search to effortlessly discover and extract your desired projects without any stress!
 
 <br />
 
