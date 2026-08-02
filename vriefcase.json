@@ -73,6 +73,83 @@
       "starRate": 4
     },
     {
+      "title": "express",
+      "description": "Express.js: the fast, unopinionated, minimalist web framework for node",
+      "repository": "github:expressjs/express",
+      "branch": "master",
+      "website": "https://expressjs.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@tjholowaychuk",
+      "starRate": 5
+    },
+    {
+      "title": "catalysta",
+      "description": "Catalysta: the Dark Web Framework for Witches",
+      "repository": "github:ohsahngah/catalysta",
+      "branch": "main",
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "ohsahngah@gmail.com",
+      "starRate": 0
+    },
+    {
+      "title": "react",
+      "description": "The library for web and native user interfaces",
+      "repository": "github:react/react",
+      "branch": "main",
+      "website": "https://react.dev",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@tjholowaychuk",
+      "starRate": 5
+    },
+    {
+      "title": "nextjs",
+      "description": "The React Framework",
+      "repository": "github:vercel/next.js",
+      "branch": "canary",
+      "website": "https://nextjs.org",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@vercel",
+      "starRate": 4
+    },
+    {
+      "title": "vuejs",
+      "description": "progressive, incrementally-adoptable JavaScript framework for building UI on the web",
+      "repository": "github:vuejs/core",
+      "branch": "main",
+      "website": "https://vuejs.org",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@vuejs",
+      "starRate": 5
+    },
+    {
+      "title": "nuxt",
+      "description": "the full-stack Vue framework",
+      "repository": "github:nuxt/nuxt",
+      "branch": "main",
+      "website": "https://nuxt.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@nuxt_js",
+      "starRate": 5
+    },
+    {
+      "title": "angular",
+      "description": "Deliver web apps with confidence",
+      "repository": "github:angular/angular",
+      "branch": "main",
+      "website": "https://angular.dev",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "angular@angular.io",
+      "starRate": 3
+    },
+    {
       "title": "vriefcase",
       "description": "the virtual briefcase for all intelligent beings",
       "repository": "github:ohsahngah/vriefcase",
