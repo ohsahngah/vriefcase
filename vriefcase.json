@@ -260,6 +260,50 @@
       "starRate": 3
     },
     {
+      "title": "tailwindcss",
+      "description": "A utility-first CSS framework for rapid UI development",
+      "repository": "github:tailwindlabs/tailwindcss",
+      "branch": "main",
+      "website": "https://tailwindcss.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@tailwindcss",
+      "starRate": 3
+    },
+    {
+      "title": "bulma",
+      "description": "Modern CSS framework based on Flexbox",
+      "repository": "github:jgthms/bulma",
+      "branch": "main",
+      "website": "https://bulma.io",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@jgthms",
+      "starRate": 3
+    },
+    {
+      "title": "foundation-sites",
+      "description": "The most advanced responsive front-end framework in the world",
+      "repository": "github:foundation/foundation-sites",
+      "branch": "develop",
+      "website": "https://get.foundation",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@joeworkman",
+      "starRate": 2
+    },
+    {
+      "title": "Semantic-UI",
+      "description": "UI component framework based around useful principles from natural language",
+      "repository": "github:Semantic-Org/Semantic-UI",
+      "branch": "master",
+      "website": "https://semantic-ui.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "info@semantic-ui.com",
+      "starRate": 3
+    },
+    {
       "title": "jQuery",
       "description": "javascript library",
       "repository": "github:jquery/jquery",
@@ -269,6 +313,17 @@
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": "timmywil@hachyderm.io",
       "starRate": 5
+    },
+    {
+      "title": "lodash",
+      "description": "A modern JavaScript utility library delivering modularity, performance, & extras",
+      "repository": "github:lodash/lodash",
+      "branch": "main",
+      "website": "https://lodash.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@jdalton",
+      "starRate": 4
     },
     {
       "title": "http-server",
