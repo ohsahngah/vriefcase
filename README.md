@@ -110,4 +110,4 @@ When the **vriefcase-identification bot** discovers the **vriefcase project iden
 
 <br />
 
-Become a contributor to **Vriefcase**! Attaining contributor status gives you the right to propose agenda items and vote on the future of **Vriefcase**. Additionally, you will be listed in the contributor section of the README file with a link back to you. [[Become a sponsor]()]
+Become a contributor to **Vriefcase**! Attaining contributor status gives you the right to propose agenda items and vote on the future of **Vriefcase**. Additionally, you will be listed in the contributor section of the README file with a link back to you, and you can permanently engrave a project of your choice into **Vriefcase**. [[Join the Project]()]
