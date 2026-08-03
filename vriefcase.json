@@ -139,6 +139,17 @@
       "starRate": 5
     },
     {
+      "title": "nuxt-v2-starter",
+      "description": "Starter template for the final Nuxt.js v2 release",
+      "repository": "github:ohsahngah/nuxt-v2-starter",
+      "branch": "main",
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "ohsahngah@gmail.com",
+      "starRate": 2
+    },
+    {
       "title": "angular",
       "description": "Deliver web apps with confidence",
       "repository": "github:angular/angular",
