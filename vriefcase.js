@@ -20,7 +20,7 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.1.3';
+const ver = 'v0.1.5';
 const DATA_URL = 'https://ohsahngah.github.io/vriefcase/vriefcase.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
@@ -228,6 +228,7 @@ async function extractSnapshot(repo) {
             }
         });
 
+        // 활용될 예정
         const removedMsg = removedItems.length > 0 
             ? ` (Removed: ${removedItems.join(', ')})` 
             : '';
@@ -257,6 +258,8 @@ async function main() {
     if (process.exitCode === 1) return;
 
     const dataset = await fetchDataset();
+    if (process.exitCode === 1) return;
+
     const rawRepositories = dataset.repositories || [];
     const recommendationList = dataset.recommendationList || [];
 
