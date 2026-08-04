@@ -14,7 +14,9 @@
     "Pretendard",
     "D2Coding",
     "Iosevka",
-    "JetBrainsMono"
+    "JetBrainsMono",
+    "cheerio",
+    "pico"
   ],
   "repositories": [
     {
