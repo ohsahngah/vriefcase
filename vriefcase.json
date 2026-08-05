@@ -89,12 +89,34 @@
       "title": "catalysta",
       "description": "Catalysta: the Dark Web Framework for Witches",
       "repository": "github:ohsahngah/catalysta",
-      "branch": "main",
+      "branch": null,
       "website": null,
       "createdAt": "2026-07-23T01:07:43Z",
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": "ohsahngah@gmail.com",
       "starRate": 0
+    },
+    {
+      "title": "hono",
+      "description": "Web framework built on Web Standards",
+      "repository": "github:honojs/hono",
+      "branch": null,
+      "website": "https://hono.dev",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@honojs",
+      "starRate": 3
+    },
+    {
+      "title": "hono-minimal-starter",
+      "description": "Hono,js starter templates",
+      "repository": "github:honojs/starter",
+      "branch": null,
+      "website": "https://hono.dev",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@honojs",
+      "starRate": 3
     },
     {
       "title": "react",
@@ -119,6 +141,28 @@
       "starRate": 4
     },
     {
+      "title": "next-saas-starter",
+      "description": "Get started quickly with Next.js, Postgres, Stripe, and shadcn/ui",
+      "repository": "github:nextjs/saas-starter",
+      "branch": null,
+      "website": "https://next-saas-start.vercel.app",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@vercel",
+      "starRate": 3
+    },
+    {
+      "title": "next-tailwindcss-starter",
+      "description": "next.js and tailwindcss examples",
+      "repository": "github:tailwindlabs/tailwindcss-setup-examples",
+      "branch": "master",
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@tailwindcss",
+      "starRate": 3
+    },
+    {
       "title": "vuejs",
       "description": "progressive, incrementally-adoptable JavaScript framework for building UI on the web",
       "repository": "github:vuejs/core",
@@ -128,6 +172,17 @@
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": "@vuejs",
       "starRate": 5
+    },
+    {
+      "title": "vuejs",
+      "description": "Vite Vue.js v3 starter",
+      "repository": "github:vitejs/vite-plugin-vue",
+      "branch": null,
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@vite_js",
+      "starRate": 1
     },
     {
       "title": "nuxt",
@@ -149,6 +204,39 @@
       "createdAt": "2026-07-23T01:07:43Z",
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": "ohsahngah@gmail.com",
+      "starRate": 3
+    },
+    {
+      "title": "nuxt-v2-minimal-starter",
+      "description": "Create a new Nuxt v2 project",
+      "repository": "github:nuxt/starter",
+      "branch": "v2",
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@nuxt_js",
+      "starRate": 2
+    },
+    {
+      "title": "nuxt-v3-minimal-starter",
+      "description": "Create a new Nuxt v3 project",
+      "repository": "github:nuxt/starter",
+      "branch": "v3",
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@nuxt_js",
+      "starRate": 2
+    },
+    {
+      "title": "nuxt-v4-minimal-starter",
+      "description": "Create a new Nuxt v4 project",
+      "repository": "github:nuxt/starter",
+      "branch": "v4",
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@nuxt_js",
       "starRate": 2
     },
     {
@@ -304,6 +392,17 @@
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": "appleboy.tw@gmail.com",
       "starRate": 2
+    },
+    {
+      "title": "modern-html-template",
+      "description": "HTML blocks",
+      "repository": "github:mrmrs/html",
+      "branch": "master",
+      "website": "https://mrmrs.github.io/html",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@mrmrs_",
+      "starRate": 1
     },
     {
       "title": "json-server",
@@ -557,6 +656,72 @@
       "updatedAt": "2026-07-23T01:07:43Z",
       "contact": null,
       "starRate": 2
+    },
+    {
+      "title": "lucide",
+      "description": "Beautiful & consistent icon toolkit made by the community",
+      "repository": "github:lucide-icons/lucide",
+      "branch": null,
+      "website": "https://lucide.dev",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@lucide_icons",
+      "starRate": 2
+    },
+    {
+      "title": "Font-Awesome",
+      "description": "The iconic SVG, font, and CSS toolkit",
+      "repository": "github:FontAwesome/Font-Awesome",
+      "branch": "7.x",
+      "website": "https://fontawesome.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "admin@fortawesome.com",
+      "starRate": 2
+    },
+    {
+      "title": "heroicons",
+      "description": "A set of free MIT-licensed high-quality SVG icons for UI development",
+      "repository": "github:tailwindlabs/heroicons",
+      "branch": "master",
+      "website": "https://heroicons.com",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@tailwindcss",
+      "starRate": 3
+    },
+    {
+      "title": "tabler-icons",
+      "description": "Set of over 6100 free MIT-licensed high-quality SVG icons for you to use in your web projects",
+      "repository": "github:tabler/tabler-icons",
+      "branch": null,
+      "website": "https://tabler.io/icons",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "hello@tabler.io",
+      "starRate": 4
+    },
+    {
+      "title": "material-design-icons",
+      "description": "Material Design icons by Google",
+      "repository": "github:google/material-design-icons",
+      "branch": "master",
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "opensource@google.com",
+      "starRate": 5
+    },
+    {
+      "title": "octicons",
+      "description": "A scalable set of icons handcrafted",
+      "repository": "github:primer/octicons",
+      "branch": null,
+      "website": "https://primer.style/octicons",
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": "@githubprimer",
+      "starRate": 5
     }
   ]
 }
