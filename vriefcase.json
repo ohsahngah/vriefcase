@@ -174,7 +174,7 @@
       "starRate": 5
     },
     {
-      "title": "vuejs",
+      "title": "vue-v3-starter",
       "description": "Vite Vue.js v3 starter",
       "repository": "github:vitejs/vite-plugin-vue",
       "branch": null,
