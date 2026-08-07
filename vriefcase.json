@@ -20,6 +20,17 @@
   ],
   "repositories": [
     {
+      "title": "filebrowser",
+      "description": "Browse, upload, edit, preview, and delete files easily",
+      "repository": "github:filebrowser/filebrowser",
+      "branch": null,
+      "website": null,
+      "createdAt": "2026-07-23T01:07:43Z",
+      "updatedAt": "2026-07-23T01:07:43Z",
+      "contact": null,
+      "starRate": 1
+    },
+    {
       "title": "D2Coding",
       "description": "Korean-supporting monospaced font for developers by Naver",
       "repository": "github:naver/d2-coding-font",
