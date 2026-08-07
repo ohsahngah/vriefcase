@@ -429,7 +429,7 @@
     {
       "name": "Font-Awesome",
       "desc": "The iconic SVG, font, and CSS toolkit",
-      "repo": "github:FontAwesome/Font-Awesome#7.x",
+      "repo": "github:FontAwesome/Font-Awesome",
       "url": "https://fontawesome.com",
       "star": 2
     },
