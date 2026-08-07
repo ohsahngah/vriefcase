@@ -1,6 +1,6 @@
 {
     "name": "vriefcase",
-    "version": "0.1.5",
+    "version": "0.1.9",
     "description": "vriefcase: the virtual briefcase for all intelligent beings",
     "main": "vriefcase.js",
     "bin": {
@@ -8,8 +8,8 @@
     },
     "files": [
         "vriefcase.js",
-        "README.md",
-        "LICENSE"
+        "readme.md",
+        "license"
     ],
     "keywords": [
         "vriefcase",
