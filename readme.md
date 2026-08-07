@@ -59,28 +59,28 @@ Help & Recommended Projects:
 $ vriefcase
 ```
 
-Search projects:
+Search Projects Using Hints:
 ```bash
-$ vriefcase server
+$ vriefcase popular css framework
 ```
 
 Extract project snapshot:
 ```bash
-$ vriefcase @http-server
+$ vriefcase @bootstrap
 ```
 
 <br />
 
-<b>💡 Convenient Clue Search?</b><br />
-**vriefcase** features an incredibly intuitive '**Clue Search**' capability. You don't need to know the exact project name to find what you're looking for; simply list any related keywords or clues that come to mind. For example, if you want to extract a font-related project to your local machine, just type:
+<b>💡 Convenient Hint Search?</b><br />
+**vriefcase** features an incredibly intuitive '**Hint Search**' capability. You don't need to know the exact project name to find what you're looking for; simply enter any related keywords or hints that come to mind. For example, if you want to extract a font-related project to your local machine, just type:
 ```bash
 $ vriefcase font
 ```
-and a list of relevant projects will immediately appear.  Providing multiple clues allows for an even more precise search. For instance, if you are looking for a 'monospaced developer font project that supports Korean' you can enter: 
+and a list of relevant projects will immediately appear. Providing multiple hints allows for an even more precise search. For instance, if you are looking for a 'monospaced developer font project that supports Korean' you can enter: 
 ```bash
 $ vriefcase font coding korean
 ```
-Leverage vriefcase's Clue Search to effortlessly discover and extract your desired projects without any stress!
+Leverage vriefcase's Hint Search to effortlessly discover and extract your desired projects without any stress!
 
 <br />
 
@@ -97,7 +97,12 @@ Example of a vriefcase project identifier:
 vriefcase@your-project-title
 ```
 
-When the **vriefcase-identification bot** discovers the **vriefcase project identifier**, it determines its usefulness and immediately registers the project on **vriefcase**. On average, the project will automatically appear on **vriefcase** one hour after registration. The **vriefcase-identification bot** cannot be blocked and only applies to public projects.
+When the **vriefcase-identification bot** discovers the **vriefcase project identifier**, it determines its usefulness and immediately registers the project on **vriefcase**. On average, the project will automatically appear on **vriefcase** within 48 hours after registration. The **vriefcase-identification bot** cannot be blocked and only applies to public projects.
+
+<br />
+
+<b>Need a faster response?</b><br />
+Visit the vriefcase GitHub repository and submit a pull request (PR). You can also open an issue there if you have any questions, suggestions, or feedback.
 
 <br />
 
