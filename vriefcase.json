@@ -1,738 +1,465 @@
 {
-  "title": "vriefcase",
-  "description": "the virtual briefcase for all intelligent beings",
-  "administrator": "ohsahngah",
-  "contact": "ohsahngah@gmail.com",
-  "createdAt": "2026-07-23T01:07:43Z",
-  "updatedAt": "2026-07-23T01:07:43Z",
   "isActive": true,
-  "totalCount": 4,
-  "website": null,
-  "callCount": 90,
-  "recommendationList": [
-    "Bootstrap",
-    "Pretendard",
-    "D2Coding",
-    "Iosevka",
-    "JetBrainsMono",
-    "cheerio",
-    "pico"
-  ],
-  "repositories": [
-    {
-      "title": "filebrowser",
-      "description": "Browse, upload, edit, preview, and delete files easily",
-      "repository": "github:filebrowser/filebrowser",
-      "branch": null,
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": null,
-      "starRate": 1
-    },
-    {
-      "title": "D2Coding",
-      "description": "Korean-supporting monospaced font for developers by Naver",
-      "repository": "github:naver/d2-coding-font",
-      "branch": "master",
-      "website": "https://naver.github.io/d2-coding-font",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "opensource@navercorp.com",
-      "starRate": 5
-    },
-    {
-      "title": "Sarasa-Gothic",
-      "description": "Iosevka-based CJK(Chinese, Japanese, Korean) monospaced coding font",
-      "repository": "github:be5invis/Sarasa-Gothic",
-      "branch": "main",
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "belleve@invis.moe",
-      "starRate": 4
-    },
-    {
-      "title": "Iosevka",
-      "description": "highly customizable open-source monospaced coding font",
-      "repository": "github:be5invis/Iosevka",
-      "branch": null,
-      "website": "https://typeof.net/Iosevka",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "belleve@invis.moe",
-      "starRate": 4
-    },
-    {
-      "title": "Pretendard",
-      "description": "Korea's standard open-source Korean UI font",
-      "repository": "github:orioncactus/pretendard",
-      "branch": null,
-      "website": "https://cactus.tistory.com/306",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "orioncactus@gmail.com",
-      "starRate": 5
-    },
-    {
-      "title": "JetBrainsMono",
-      "description": "free and open-source developer font",
-      "repository": "github:JetBrains/JetBrainsMono",
-      "branch": "master",
-      "website": "https://www.jetbrains.com/ko-kr/lp/mono",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "github@jetbrains.com",
-      "starRate": 4
-    },
-    {
-      "title": "express",
-      "description": "Express.js: the fast, unopinionated, minimalist web framework for node",
-      "repository": "github:expressjs/express",
-      "branch": "master",
-      "website": "https://expressjs.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@tjholowaychuk",
-      "starRate": 5
-    },
-    {
-      "title": "catalysta",
-      "description": "Catalysta: the Dark Web Framework for Witches",
-      "repository": "github:ohsahngah/catalysta",
-      "branch": null,
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "ohsahngah@gmail.com",
-      "starRate": 0
-    },
+  "name": "vriefcase",
+  "desc": "the virtual briefcase for all intelligent beings",
+  "repo": "github:ohsahngah/vriefcase",
+  "url": null,
+  "star": 5,
+  "repos": [
     {
-      "title": "hono",
-      "description": "Web framework built on Web Standards",
-      "repository": "github:honojs/hono",
-      "branch": null,
-      "website": "https://hono.dev",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@honojs",
-      "starRate": 3
-    },
-    {
-      "title": "hono-minimal-starter",
-      "description": "Hono,js starter templates",
-      "repository": "github:honojs/starter",
-      "branch": null,
-      "website": "https://hono.dev",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@honojs",
-      "starRate": 3
-    },
-    {
-      "title": "react",
-      "description": "The library for web and native user interfaces",
-      "repository": "github:react/react",
-      "branch": null,
-      "website": "https://react.dev",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@tjholowaychuk",
-      "starRate": 5
-    },
-    {
-      "title": "nextjs",
-      "description": "The React Framework",
-      "repository": "github:vercel/next.js",
-      "branch": "canary",
-      "website": "https://nextjs.org",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@vercel",
-      "starRate": 4
-    },
-    {
-      "title": "next-saas-starter",
-      "description": "Get started quickly with Next.js, Postgres, Stripe, and shadcn/ui",
-      "repository": "github:nextjs/saas-starter",
-      "branch": null,
-      "website": "https://next-saas-start.vercel.app",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@vercel",
-      "starRate": 3
-    },
-    {
-      "title": "next-tailwindcss-starter",
-      "description": "next.js and tailwindcss examples",
-      "repository": "github:tailwindlabs/tailwindcss-setup-examples",
-      "branch": "master",
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@tailwindcss",
-      "starRate": 3
-    },
-    {
-      "title": "vuejs",
-      "description": "progressive, incrementally-adoptable JavaScript framework for building UI on the web",
-      "repository": "github:vuejs/core",
-      "branch": null,
-      "website": "https://vuejs.org",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@vuejs",
-      "starRate": 5
-    },
-    {
-      "title": "vue-v3-starter",
-      "description": "Vite Vue.js v3 starter",
-      "repository": "github:vitejs/vite-plugin-vue",
-      "branch": null,
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@vite_js",
-      "starRate": 1
-    },
-    {
-      "title": "nuxt",
-      "description": "the full-stack Vue framework",
-      "repository": "github:nuxt/nuxt",
-      "branch": null,
-      "website": "https://nuxt.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@nuxt_js",
-      "starRate": 5
-    },
-    {
-      "title": "nuxt-v2-starter",
-      "description": "Starter template for the final Nuxt.js v2 release",
-      "repository": "github:ohsahngah/nuxt-v2-starter",
-      "branch": null,
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "ohsahngah@gmail.com",
-      "starRate": 3
-    },
-    {
-      "title": "nuxt-v2-minimal-starter",
-      "description": "Create a new Nuxt v2 project",
-      "repository": "github:nuxt/starter",
-      "branch": "v2",
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@nuxt_js",
-      "starRate": 2
-    },
-    {
-      "title": "nuxt-v3-minimal-starter",
-      "description": "Create a new Nuxt v3 project",
-      "repository": "github:nuxt/starter",
-      "branch": "v3",
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@nuxt_js",
-      "starRate": 2
-    },
-    {
-      "title": "nuxt-v4-minimal-starter",
-      "description": "Create a new Nuxt v4 project",
-      "repository": "github:nuxt/starter",
-      "branch": "v4",
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@nuxt_js",
-      "starRate": 2
-    },
-    {
-      "title": "angular",
-      "description": "Deliver web apps with confidence",
-      "repository": "github:angular/angular",
-      "branch": "main",
-      "website": "https://angular.dev",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "angular@angular.io",
-      "starRate": 3
-    },
-    {
-      "title": "the-new-css-reset",
-      "description": "The New Simple and Lighter CSS Reset",
-      "repository": "github:elad2412/the-new-css-reset",
-      "branch": null,
-      "website": "https://elad2412.github.io/the-new-css-reset",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@eladsc",
-      "starRate": 4
-    },
-    {
-      "title": "modern-css-reset",
-      "description": "A bare-bones CSS reset for modern web development",
-      "repository": "github:Andy-set-studio/modern-css-reset",
-      "branch": "master",
-      "website": "https://piccalil.li/blog/a-more-modern-css-reset",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "andy@set.studio",
-      "starRate": 4
-    },
-    {
-      "title": "normalize.css",
-      "description": "A modern alternative to CSS resets",
-      "repository": "github:necolas/normalize.css",
-      "branch": "master",
-      "website": "https://necolas.github.io/normalize.css",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@necolas",
-      "starRate": 3
-    },
-    {
-      "title": "pico",
-      "description": "Minimal CSS Framework for semantic HTML",
-      "repository": "github:picocss/pico",
-      "branch": null,
-      "website": "https://picocss.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "contact@picocss.com",
-      "starRate": 3
-    },
-    {
-      "title": "wather.css",
-      "description": "A drop-in collection of CSS styles to make simple websites just a little nicer",
-      "repository": "github:kognise/wather.css",
-      "branch": "master",
-      "website": "https://watercss.kognise.dev",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "hi@kognise.dev",
-      "starRate": 3
-    },
-    {
-      "title": "sanitize.css",
-      "description": "A best-practices CSS foundation",
-      "repository": "github:csstools/sanitize.css",
-      "branch": null,
-      "website": "https://csstools.github.io/sanitize.css",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": null,
-      "starRate": 0
-    },
-    {
-      "title": "milligram",
-      "description": "A minimalist CSS framework",
-      "repository": "github:milligram/milligram",
-      "branch": null,
-      "website": "https://milligram.io",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@cjpatoilo",
-      "starRate": 2
-    },
-    {
-      "title": "chota",
-      "description": "A micro (3kb) CSS framework",
-      "repository": "github:jenil/chota",
-      "branch": null,
-      "website": "https://jenil.github.io/chota",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@geekGogari",
-      "starRate": 3
-    },
-    {
-      "title": "paper-css",
-      "description": "Paper CSS for happy printing",
-      "repository": "github:cognitom/paper-css",
-      "branch": "master",
-      "website": "https://www.npmjs.com/package/paper-css",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "tsutomu@librize.com",
-      "starRate": 2
-    },
-    {
-      "title": "normizer",
-      "description": "Beyond CSS reset, a smarter UI normalizer",
-      "repository": "github:ohsahngah/normizer",
-      "branch": null,
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "ohsahngah@gmail.com",
-      "starRate": 0
-    },
-    {
-      "title": "excalidraw",
-      "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
-      "repository": "github:excalidraw/excalidraw",
-      "branch": "master",
-      "website": "https://excalidraw.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@excalidraw",
-      "starRate": 4
-    },
-    {
-      "title": "vriefcase",
-      "description": "the virtual briefcase for all intelligent beings",
-      "repository": "github:ohsahngah/vriefcase",
-      "branch": null,
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "ohsahngah@gmail.com",
-      "starRate": 0
-    },
-    {
-      "title": "html5-boilerplate",
-      "description": "A professional front-end template for building fast, robust, and adaptable web apps or sites",
-      "repository": "github:h5bp/html5-boilerplate",
-      "branch": null,
-      "website": "https://html5boilerplate.com/",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "appleboy.tw@gmail.com",
-      "starRate": 2
-    },
-    {
-      "title": "modern-html-template",
-      "description": "HTML blocks",
-      "repository": "github:mrmrs/html",
-      "branch": "master",
-      "website": "https://mrmrs.github.io/html",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@mrmrs_",
-      "starRate": 1
-    },
-    {
-      "title": "json-server",
-      "description": "Get a full fake REST API with zero coding in less than 30 seconds",
-      "repository": "github:typicode/json-server",
-      "branch": "main",
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "typicode@gmail.com",
-      "starRate": 3
-    },
-    {
-      "title": "reveal.js",
-      "description": "The HTML Presentation Framework",
-      "repository": "github:hakimel/reveal.js",
-      "branch": "master",
-      "website": "https://hakim.se",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "hakim.elhattab@gmail.com",
-      "starRate": 4
-    },
-    {
-      "title": "Ladda",
-      "description": "Buttons with built-in loading indicators",
-      "repository": "github:hakimel/ladda",
-      "branch": "master",
-      "website": "https://hakim.se",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "hakim.elhattab@gmail.com",
-      "starRate": 2
-    },
-    {
-      "title": "Docsify",
-      "description": "A magical documentation site generator",
-      "repository": "github:docsifyjs/docsify",
-      "branch": "develop",
-      "website": "https://docsify.js.org",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "maintainers@docsifyjs.org",
-      "starRate": 2
-    },
-    {
-      "title": "Gitfolio",
-      "description": "personal website + blog for every github user",
-      "repository": "github:imfunniee/gitfolio",
-      "branch": "master",
-      "website": "https://imfunniee.github.io/gitfolio",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@imfunniee",
-      "starRate": 1
-    },
-    {
-      "title": "AdminLTE",
-      "description": "Free admin dashboard template based on Bootstrap 5",
-      "repository": "github:ColorlibHQ/AdminLTE",
-      "branch": "master",
-      "website": "https://colorlib.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@colorlib",
-      "starRate": 1
-    },
-    {
-      "title": "Bootstrap",
-      "description": "popular HTML, CSS, JS framework for responsive, mobile-first web development",
-      "repository": "github:twbs/bootstrap",
-      "branch": null,
-      "website": "https://getbootstrap.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@getbootstrap",
-      "starRate": 5
-    },
-    {
-      "title": "bootstrap-icons",
-      "description": "Official open source SVG icon library for Bootstrap",
-      "repository": "github:twbs/icons",
-      "branch": "main",
-      "website": "https://icons.getbootstrap.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@getbootstrap",
-      "starRate": 3
-    },
-    {
-      "title": "tailwindcss",
-      "description": "A utility-first CSS framework for rapid UI development",
-      "repository": "github:tailwindlabs/tailwindcss",
-      "branch": null,
-      "website": "https://tailwindcss.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@tailwindcss",
-      "starRate": 3
-    },
-    {
-      "title": "bulma",
-      "description": "Modern CSS framework based on Flexbox",
-      "repository": "github:jgthms/bulma",
-      "branch": null,
-      "website": "https://bulma.io",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@jgthms",
-      "starRate": 3
-    },
-    {
-      "title": "foundation-sites",
-      "description": "The most advanced responsive front-end framework in the world",
-      "repository": "github:foundation/foundation-sites",
-      "branch": "develop",
-      "website": "https://get.foundation",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@joeworkman",
-      "starRate": 2
-    },
-    {
-      "title": "Semantic-UI",
-      "description": "UI component framework based around useful principles from natural language",
-      "repository": "github:Semantic-Org/Semantic-UI",
-      "branch": "master",
-      "website": "https://semantic-ui.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "info@semantic-ui.com",
-      "starRate": 3
-    },
-    {
-      "title": "jQuery",
-      "description": "javascript library",
-      "repository": "github:jquery/jquery",
-      "branch": "3.6-stable",
-      "website": "https://jquery.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "timmywil@hachyderm.io",
-      "starRate": 5
-    },
-    {
-      "title": "cash",
-      "description": "An absurdly small jQuery alternative for modern browsers",
-      "repository": "github:fabiospampinato/cash",
-      "branch": "master",
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "fabio@notable.app",
-      "starRate": 3
-    },
-    {
-      "title": "alpine",
-      "description": "A rugged, minimal framework for composing JavaScript behavior in your markup",
-      "repository": "github:alpinejs/alpine",
-      "branch": null,
-      "website": "https://alpinejs.dev",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": null,
-      "starRate": 1
-    },
-    {
-      "title": "umbrella",
-      "description": "Lightweight javascript library for DOM manipulation and events",
-      "repository": "github:franciscop/umbrella",
-      "branch": "master",
-      "website": "https://umbrellajs.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@fpresencia",
-      "starRate": 3
-    },
-    {
-      "title": "htmx",
-      "description": "high power tools for HTML",
-      "repository": "github:bigskysoftware/htmx",
-      "branch": "master",
-      "website": "https://htmx.org",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "info@bigsky.software",
-      "starRate": 3
-    },
-    {
-      "title": "petite-vue",
-      "description": "6kb subset of Vue optimized for progressive enhancement",
-      "repository": "github:vuejs/petite-vue",
-      "branch": null,
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@vuejs",
-      "starRate": 3
-    },
-    {
-      "title": "dom7",
-      "description": "Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API",
-      "repository": "github:vuejs/dom7",
-      "branch": "master",
-      "website": "https://framework7.io/docs/dom7.html",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@nolimits4web",
-      "starRate": 2
-    },
-    {
-      "title": "cheerio",
-      "description": "The fast, flexible, and elegant library for parsing and manipulating HTML and XML",
-      "repository": "github:cheeriojs/cheerio",
-      "branch": null,
-      "website": "https://cheerio.js.org",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@matthewmueller",
-      "starRate": 5
-    },
-    {
-      "title": "zepto",
-      "description": "A minimalist JavaScript library for modern browsers, with a jQuery-compatible API",
-      "repository": "github:madrobby/zepto",
-      "branch": null,
-      "website": "https://zeptojs.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "thomas@slash7.com",
-      "starRate": 2
-    },
-    {
-      "title": "lodash",
-      "description": "A modern JavaScript utility library delivering modularity, performance, & extras",
-      "repository": "github:lodash/lodash",
-      "branch": null,
-      "website": "https://lodash.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@jdalton",
-      "starRate": 4
-    },
-    {
-      "title": "http-server",
-      "description": "A simple, zero-configuration, command-line http server",
-      "repository": "github:http-party/http-server",
-      "branch": "master",
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": null,
-      "starRate": 2
-    },
-    {
-      "title": "lucide",
-      "description": "Beautiful & consistent icon toolkit made by the community",
-      "repository": "github:lucide-icons/lucide",
-      "branch": null,
-      "website": "https://lucide.dev",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@lucide_icons",
-      "starRate": 2
-    },
-    {
-      "title": "Font-Awesome",
-      "description": "The iconic SVG, font, and CSS toolkit",
-      "repository": "github:FontAwesome/Font-Awesome",
-      "branch": "7.x",
-      "website": "https://fontawesome.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "admin@fortawesome.com",
-      "starRate": 2
-    },
-    {
-      "title": "heroicons",
-      "description": "A set of free MIT-licensed high-quality SVG icons for UI development",
-      "repository": "github:tailwindlabs/heroicons",
-      "branch": "master",
-      "website": "https://heroicons.com",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@tailwindcss",
-      "starRate": 3
-    },
-    {
-      "title": "tabler-icons",
-      "description": "Set of over 6100 free MIT-licensed high-quality SVG icons for you to use in your web projects",
-      "repository": "github:tabler/tabler-icons",
-      "branch": null,
-      "website": "https://tabler.io/icons",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "hello@tabler.io",
-      "starRate": 4
-    },
-    {
-      "title": "material-design-icons",
-      "description": "Material Design icons by Google",
-      "repository": "github:google/material-design-icons",
-      "branch": "master",
-      "website": null,
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "opensource@google.com",
-      "starRate": 5
-    },
-    {
-      "title": "octicons",
-      "description": "A scalable set of icons handcrafted",
-      "repository": "github:primer/octicons",
-      "branch": null,
-      "website": "https://primer.style/octicons",
-      "createdAt": "2026-07-23T01:07:43Z",
-      "updatedAt": "2026-07-23T01:07:43Z",
-      "contact": "@githubprimer",
-      "starRate": 5
+      "name": "filebrowser",
+      "desc": "Browse, upload, edit, preview, and delete files easily",
+      "repo": "github:filebrowser/filebrowser",
+      "url": null,
+      "star": 5
+    },
+    {
+      "name": "D2Coding",
+      "desc": "Korean-supporting monospaced font for developers by Naver",
+      "repo": "github:naver/d2-coding-font",
+      "url": "https://naver.github.io/d2-coding-font",
+      "star": 0
+    },
+    {
+      "name": "Sarasa-Gothic",
+      "desc": "Iosevka-based CJK(Chinese, Japanese, Korean) monospaced coding font",
+      "repo": "github:be5invis/Sarasa-Gothic",
+      "url": null,
+      "star": 4
+    },
+    {
+      "name": "Iosevka",
+      "desc": "highly customizable open-source monospaced coding font",
+      "repo": "github:be5invis/Iosevka",
+      "url": "https://typeof.net/Iosevka",
+      "star": 4
+    },
+    {
+      "name": "Pretendard",
+      "desc": "Korea's standard open-source Korean UI font",
+      "repo": "github:orioncactus/pretendard",
+      "url": "https://cactus.tistory.com/306",
+      "star": 0
+    },
+    {
+      "name": "JetBrainsMono",
+      "desc": "free and open-source developer font",
+      "repo": "github:JetBrains/JetBrainsMono",
+      "url": "https://www.jetbrains.com/ko-kr/lp/mono",
+      "star": 4
+    },
+    {
+      "name": "express",
+      "desc": "Express.js: the fast, unopinionated, minimalist web framework for node",
+      "repo": "github:expressjs/express",
+      "url": "https://expressjs.com",
+      "star": 5
+    },
+    {
+      "name": "catalysta",
+      "desc": "Catalysta: the Dark Web Framework for Witches",
+      "repo": "github:ohsahngah/catalysta",
+      "url": null,
+      "star": 0
+    },
+    {
+      "name": "hono",
+      "desc": "Web framework built on Web Standards",
+      "repo": "github:honojs/hono",
+      "url": "https://hono.dev",
+      "star": 3
+    },
+    {
+      "name": "hono-minimal-starter",
+      "desc": "Hono,js starter templates",
+      "repo": "github:honojs/starter",
+      "url": "https://hono.dev",
+      "star": 3
+    },
+    {
+      "name": "react",
+      "desc": "The library for web and native user interfaces",
+      "repo": "github:react/react",
+      "url": "https://react.dev",
+      "star": 5
+    },
+    {
+      "name": "nextjs",
+      "desc": "The React Framework",
+      "repo": "github:vercel/next.js#canary",
+      "url": "https://nextjs.org",
+      "star": 4
+    },
+    {
+      "name": "next-saas-starter",
+      "desc": "Get started quickly with Next.js, Postgres, Stripe, and shadcn/ui",
+      "repo": "github:nextjs/saas-starter",
+      "url": "https://next-saas-start.vercel.app",
+      "star": 3
+    },
+    {
+      "name": "next-tailwindcss-starter",
+      "desc": "next.js and tailwindcss examples",
+      "repo": "github:tailwindlabs/tailwindcss-setup-examples",
+      "url": null,
+      "star": 3
+    },
+    {
+      "name": "vuejs",
+      "desc": "progressive, incrementally-adoptable JavaScript framework for building UI on the web",
+      "repo": "github:vuejs/core",
+      "url": "https://vuejs.org",
+      "star": 5
+    },
+    {
+      "name": "vue-v3-starter",
+      "desc": "Vite Vue.js v3 starter",
+      "repo": "github:vitejs/vite-plugin-vue",
+      "url": null,
+      "star": 1
+    },
+    {
+      "name": "nuxt",
+      "desc": "the full-stack Vue framework",
+      "repo": "github:nuxt/nuxt",
+      "url": "https://nuxt.com",
+      "star": 5
+    },
+    {
+      "name": "nuxt-v2-starter",
+      "desc": "Starter template for the final Nuxt.js v2 release",
+      "repo": "github:ohsahngah/nuxt-v2-starter",
+      "url": null,
+      "star": 3
+    },
+    {
+      "name": "nuxt-v2-minimal-starter",
+      "desc": "Create a new Nuxt v2 project",
+      "repo": "github:nuxt/starter#v2",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "nuxt-v3-minimal-starter",
+      "desc": "Create a new Nuxt v3 project",
+      "repo": "github:nuxt/starter#v3",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "nuxt-v4-minimal-starter",
+      "desc": "Create a new Nuxt v4 project",
+      "repo": "github:nuxt/starter#v4",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "angular",
+      "desc": "Deliver web apps with confidence",
+      "repo": "github:angular/angular",
+      "url": "https://angular.dev",
+      "star": 3
+    },
+    {
+      "name": "the-new-css-reset",
+      "desc": "The New Simple and Lighter CSS Reset",
+      "repo": "github:elad2412/the-new-css-reset",
+      "url": "https://elad2412.github.io/the-new-css-reset",
+      "star": 4
+    },
+    {
+      "name": "modern-css-reset",
+      "desc": "A bare-bones CSS reset for modern web development",
+      "repo": "github:Andy-set-studio/modern-css-reset",
+      "url": "https://piccalil.li/blog/a-more-modern-css-reset",
+      "star": 4
+    },
+    {
+      "name": "normalize.css",
+      "desc": "A modern alternative to CSS resets",
+      "repo": "github:necolas/normalize.css",
+      "url": "https://necolas.github.io/normalize.css",
+      "star": 3
+    },
+    {
+      "name": "pico",
+      "desc": "Minimal CSS Framework for semantic HTML",
+      "repo": "github:picocss/pico",
+      "url": "https://picocss.com",
+      "star": 3
+    },
+    {
+      "name": "wather.css",
+      "desc": "A drop-in collection of CSS styles to make simple websites just a little nicer",
+      "repo": "github:kognise/wather.css",
+      "url": "https://watercss.kognise.dev",
+      "star": 3
+    },
+    {
+      "name": "sanitize.css",
+      "desc": "A best-practices CSS foundation",
+      "repo": "github:csstools/sanitize.css",
+      "url": "https://csstools.github.io/sanitize.css",
+      "star": 0
+    },
+    {
+      "name": "milligram",
+      "desc": "A minimalist CSS framework",
+      "repo": "github:milligram/milligram",
+      "url": "https://milligram.io",
+      "star": 2
+    },
+    {
+      "name": "chota",
+      "desc": "A micro (3kb) CSS framework",
+      "repo": "github:jenil/chota",
+      "url": "https://jenil.github.io/chota",
+      "star": 3
+    },
+    {
+      "name": "paper-css",
+      "desc": "Paper CSS for happy printing",
+      "repo": "github:cognitom/paper-css",
+      "url": "https://www.npmjs.com/package/paper-css",
+      "star": 2
+    },
+    {
+      "name": "normizer",
+      "desc": "Beyond CSS reset, a smarter UI normalizer",
+      "repo": "github:ohsahngah/normizer",
+      "url": null,
+      "star": 0
+    },
+    {
+      "name": "excalidraw",
+      "desc": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "repo": "github:excalidraw/excalidraw",
+      "url": "https://excalidraw.com",
+      "star": 4
+    },
+    {
+      "name": "vriefcase",
+      "desc": "the virtual briefcase for all intelligent beings",
+      "repo": "github:ohsahngah/vriefcase",
+      "url": null,
+      "star": 0
+    },
+    {
+      "name": "html5-boilerplate",
+      "desc": "A professional front-end template for building fast, robust, and adaptable web apps or sites",
+      "repo": "github:h5bp/html5-boilerplate",
+      "url": "https://html5boilerplate.com/",
+      "star": 2
+    },
+    {
+      "name": "modern-html-template",
+      "desc": "HTML blocks",
+      "repo": "github:mrmrs/html",
+      "url": "https://mrmrs.github.io/html",
+      "star": 1
+    },
+    {
+      "name": "json-server",
+      "desc": "Get a full fake REST API with zero coding in less than 30 seconds",
+      "repo": "github:typicode/json-server",
+      "url": null,
+      "star": 3
+    },
+    {
+      "name": "reveal.js",
+      "desc": "The HTML Presentation Framework",
+      "repo": "github:hakimel/reveal.js",
+      "url": "https://hakim.se",
+      "star": 4
+    },
+    {
+      "name": "Ladda",
+      "desc": "Buttons with built-in loading indicators",
+      "repo": "github:hakimel/ladda",
+      "url": "https://hakim.se",
+      "star": 2
+    },
+    {
+      "name": "Docsify",
+      "desc": "A magical documentation site generator",
+      "repo": "github:docsifyjs/docsify#develop",
+      "url": "https://docsify.js.org",
+      "star": 2
+    },
+    {
+      "name": "Gitfolio",
+      "desc": "personal website + blog for every github user",
+      "repo": "github:imfunniee/gitfolio",
+      "url": "https://imfunniee.github.io/gitfolio",
+      "star": 1
+    },
+    {
+      "name": "AdminLTE",
+      "desc": "Free admin dashboard template based on Bootstrap 5",
+      "repo": "github:ColorlibHQ/AdminLTE",
+      "url": "https://colorlib.com",
+      "star": 1
+    },
+    {
+      "name": "Bootstrap",
+      "desc": "popular HTML, CSS, JS framework for responsive, mobile-first web development",
+      "repo": "github:twbs/bootstrap",
+      "url": "https://getbootstrap.com",
+      "star": 5
+    },
+    {
+      "name": "bootstrap-icons",
+      "desc": "Official open source SVG icon library for Bootstrap",
+      "repo": "github:twbs/icons",
+      "url": "https://icons.getbootstrap.com",
+      "star": 3
+    },
+    {
+      "name": "tailwindcss",
+      "desc": "A utility-first CSS framework for rapid UI development",
+      "repo": "github:tailwindlabs/tailwindcss",
+      "url": "https://tailwindcss.com",
+      "star": 3
+    },
+    {
+      "name": "bulma",
+      "desc": "Modern CSS framework based on Flexbox",
+      "repo": "github:jgthms/bulma",
+      "url": "https://bulma.io",
+      "star": 3
+    },
+    {
+      "name": "foundation-sites",
+      "desc": "The most advanced responsive front-end framework in the world",
+      "repo": "github:foundation/foundation-sites#develop",
+      "url": "https://get.foundation",
+      "star": 2
+    },
+    {
+      "name": "Semantic-UI",
+      "desc": "UI component framework based around useful principles from natural language",
+      "repo": "github:Semantic-Org/Semantic-UI",
+      "url": "https://semantic-ui.com",
+      "star": 3
+    },
+    {
+      "name": "jQuery",
+      "desc": "javascript library",
+      "repo": "github:jquery/jquery#3.6-stable",
+      "url": "https://jquery.com",
+      "star": 5
+    },
+    {
+      "name": "cash",
+      "desc": "An absurdly small jQuery alternative for modern browsers",
+      "repo": "github:fabiospampinato/cash",
+      "url": null,
+      "star": 3
+    },
+    {
+      "name": "alpine",
+      "desc": "A rugged, minimal framework for composing JavaScript behavior in your markup",
+      "repo": "github:alpinejs/alpine",
+      "url": "https://alpinejs.dev",
+      "star": 1
+    },
+    {
+      "name": "umbrella",
+      "desc": "Lightweight javascript library for DOM manipulation and events",
+      "repo": "github:franciscop/umbrella",
+      "url": "https://umbrellajs.com",
+      "star": 3
+    },
+    {
+      "name": "htmx",
+      "desc": "high power tools for HTML",
+      "repo": "github:bigskysoftware/htmx",
+      "url": "https://htmx.org",
+      "star": 3
+    },
+    {
+      "name": "petite-vue",
+      "desc": "6kb subset of Vue optimized for progressive enhancement",
+      "repo": "github:vuejs/petite-vue",
+      "url": null,
+      "star": 3
+    },
+    {
+      "name": "dom7",
+      "desc": "Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API",
+      "repo": "github:vuejs/dom7",
+      "url": "https://framework7.io/docs/dom7.html",
+      "star": 2
+    },
+    {
+      "name": "cheerio",
+      "desc": "The fast, flexible, and elegant library for parsing and manipulating HTML and XML",
+      "repo": "github:cheeriojs/cheerio",
+      "url": "https://cheerio.js.org",
+      "star": 5
+    },
+    {
+      "name": "zepto",
+      "desc": "A minimalist JavaScript library for modern browsers, with a jQuery-compatible API",
+      "repo": "github:madrobby/zepto",
+      "url": "https://zeptojs.com",
+      "star": 2
+    },
+    {
+      "name": "lodash",
+      "desc": "A modern JavaScript utility library delivering modularity, performance, & extras",
+      "repo": "github:lodash/lodash",
+      "url": "https://lodash.com",
+      "star": 4
+    },
+    {
+      "name": "http-server",
+      "desc": "A simple, zero-configuration, command-line http server",
+      "repo": "github:http-party/http-server",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "lucide",
+      "desc": "Beautiful & consistent icon toolkit made by the community",
+      "repo": "github:lucide-icons/lucide",
+      "url": "https://lucide.dev",
+      "star": 2
+    },
+    {
+      "name": "Font-Awesome",
+      "desc": "The iconic SVG, font, and CSS toolkit",
+      "repo": "github:FontAwesome/Font-Awesome",
+      "url": "https://fontawesome.com",
+      "star": 2
+    },
+    {
+      "name": "heroicons",
+      "desc": "A set of free MIT-licensed high-quality SVG icons for UI development",
+      "repo": "github:tailwindlabs/heroicons",
+      "url": "https://heroicons.com",
+      "star": 3
+    },
+    {
+      "name": "tabler-icons",
+      "desc": "Set of over 6100 free MIT-licensed high-quality SVG icons for you to use in your web projects",
+      "repo": "github:tabler/tabler-icons",
+      "url": "https://tabler.io/icons",
+      "star": 4
+    },
+    {
+      "name": "material-design-icons",
+      "desc": "Material Design icons by Google",
+      "repo": "github:google/material-design-icons",
+      "url": null,
+      "star": 5
+    },
+    {
+      "name": "octicons",
+      "desc": "A scalable set of icons handcrafted",
+      "repo": "github:primer/octicons",
+      "url": "https://primer.style/octicons",
+      "star": 5
     }
   ]
 }
