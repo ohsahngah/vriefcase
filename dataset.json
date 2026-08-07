@@ -1,5 +1,5 @@
 {
-  "isActive": false,
+  "isActive": true,
   "name": "vriefcase",
   "desc": "the virtual briefcase for all intelligent beings",
   "repo": "github:ohsahngah/vriefcase",
