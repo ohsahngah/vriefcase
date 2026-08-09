@@ -45,8 +45,19 @@
 
 <u><b>Zero Configuration</b></u><br />
 **vriefcase** supports all operating systems and major Git hosts (GitHub, GitLab, Bitbucket, etc.), allowing you to use it immediately after installation without any configuration.
+<br />
+
+You can choose between a global or local installation. **vriefcase recommends a global installation** for convenient use from any directory.
+
+<b>Global Installation</b>:
 ```bash
 $ npm install -g vriefcase
+```
+
+<b>Local Installation</b>:<br />
+If you prefer to install vriefcase only within a specific project, you can install it locally.
+```bash
+$ npm install vriefcase
 ```
 
 <br />
@@ -116,3 +127,7 @@ Visit the vriefcase GitHub repository and submit a pull request (PR). You can al
 <br />
 
 Become a contributor to **Vriefcase**! Attaining contributor status gives you the right to propose agenda items and vote on the future of **Vriefcase**. Additionally, you will be listed in the contributor section of the README file with a link back to you, and you can permanently engrave a project of your choice into **Vriefcase**. [[Join the Project](https://ohsahngah.github.io/vriefcase)]
+
+<br />
+<mark>&nbsp;<b>vriefcase@vriefcase</b>&nbsp;</mark><br />
+This is the identifier used to identify this project in vriefcase.

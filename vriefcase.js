@@ -20,7 +20,7 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.1.9';
+const ver = 'v0.2.0';
 const DATA_URL = 'https://ohsahngah.github.io/vriefcase/vriefcase.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
@@ -190,7 +190,6 @@ async function fetchDataset() {
     }
 }
 
-// 저장소에서 프로젝트 스냅샷을 추출
 // 저장소에서 프로젝트 스냅샷을 추출
 async function extractSnapshot(repo) {
     const currentDir = process.cwd();
@@ -366,6 +365,13 @@ async function main() {
 
     // 스냅샷 추출 분기 (@)
     if (query.startsWith('@')) {
+        const atCount = (query.match(/@/g) || []).length;
+
+        if (atCount > 1) {
+            console.error(pc.red('Error: Invalid usage. Only one @ is allowed.'));
+            return;
+        }
+
         const exactTitle = query.slice(1).trim();
 
         if (exactTitle.length < 2) {
@@ -373,7 +379,9 @@ async function main() {
             return;
         }
 
-        const repo = repositories.find(r => r.name.toLowerCase() === exactTitle.toLowerCase());
+        const repo = repositories.find(
+            r => r.name.toLowerCase() === exactTitle.toLowerCase()
+        );
 
         if (!repo) {
             console.log(pc.red('Error: Valid project name required.'));
@@ -381,7 +389,7 @@ async function main() {
         }
 
         if (repo.star === 0) {
-            console.log(pc.red(`Error: Untrusted project.`));
+            console.log(pc.red('Error: Untrusted project.'));
             console.log(pc.red('Please contact the project maintainer.'));
             return;
         }
@@ -396,21 +404,46 @@ async function main() {
         return;
     }
 
-    // name과 desc를 모두 검색 대상으로 포함
     // 입력된 모든 검색 인자를 소문자로 변환하여 배열로 준비
-    const searchTerms = args.map(arg => arg.toLowerCase());
+    let searchTerms = args.map(arg => arg.toLowerCase());
+
+    // hint 중복 검사 로직
+    const uniqueTerms = new Set(searchTerms);
+    if (uniqueTerms.size < searchTerms.length) {
+        console.log(pc.yellow('\nWarning: Duplicate hints detected. Duplicates have been removed.'));
+        searchTerms = Array.from(uniqueTerms);
+    }
+
+    // hint 최대 5개 제한 및 초과 시 경고 메시지 출력
+    if (searchTerms.length > 5) {
+        console.log(pc.yellow('\nWarning: Maximum of 5 hints allowed. Additional hints will be ignored.'));
+        searchTerms = searchTerms.slice(0, 5);
+    }
 
     const searchResults = repositories
-        .filter(r => {
+        .map(r => {
             const titleStr = (r.name || '').toLowerCase();
             const descStr = (r.desc || '').toLowerCase();
             
-            // 모든 검색어(term)가 name이나 desc에 포함되어 있는지 확인 (AND 조건)
-            return searchTerms.every(term => 
-                titleStr.includes(term) || descStr.includes(term)
-            );
+            // OR 조건: 일치하는 힌트 개수(관련도) 계산
+            let matchCount = 0;
+            searchTerms.forEach(term => {
+                if (titleStr.includes(term) || descStr.includes(term)) {
+                    matchCount++;
+                }
+            });
+            
+            return { ...r, matchCount };
         })
-        .sort((a, b) => (b.star || 0) - (a.star || 0));
+        .filter(r => r.matchCount > 0) // 검색어가 하나라도 포함된 프로젝트만 필터링
+        .sort((a, b) => {
+            // 1순위 정렬: 관련도 (포함된 hint 개수) 내림차순
+            if (b.matchCount !== a.matchCount) {
+                return b.matchCount - a.matchCount;
+            }
+            // 2순위 정렬: star 기준 내림차순
+            return (b.star || 0) - (a.star || 0);
+        });
 
     if (searchResults.length === 0) {
         console.log(pc.red('Error: No related project found.'));
