@@ -7,6 +7,13 @@
   "star": 5,
   "repos": [
     {
+      "name": "minify-js",
+      "desc": "recursively minify all JavaScript file",
+      "repo": "gitlab:adamlui/minify-js",
+      "url": null,
+      "star": 1
+    },
+    {
       "name": "free-programming-books",
       "desc": "list of freely available programming books",
       "repo": "github:EbookFoundation/free-programming-books",
