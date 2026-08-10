@@ -7,6 +7,13 @@
   "star": 5,
   "repos": [
     {
+      "name": "free-programming-books",
+      "desc": "list of freely available programming books",
+      "repo": "EbookFoundation/free-programming-books",
+      "url": "https://ebookfoundation.github.io/free-programming-books",
+      "star": 5
+    },
+    {
       "name": "writeme",
       "desc": "minimalist standard README.md template",
       "repo": "github:ohsahngah/writeme",
@@ -18,7 +25,7 @@
       "desc": "Browse, upload, edit, preview, and delete files easily",
       "repo": "github:filebrowser/filebrowser",
       "url": null,
-      "star": 5
+      "star": 3
     },
     {
       "name": "d2coding",
