@@ -7,6 +7,13 @@
   "star": 5,
   "repos": [
     {
+      "name": "writeme",
+      "desc": "minimalist standard README.md template",
+      "repo": "github:ohsahngah/writeme",
+      "url": null,
+      "star": 4
+    },
+    {
       "name": "filebrowser",
       "desc": "Browse, upload, edit, preview, and delete files easily",
       "repo": "github:filebrowser/filebrowser",
@@ -21,21 +28,21 @@
       "star": 5
     },
     {
-      "name": "Sarasa-Gothic",
+      "name": "sarasa-gothic",
       "desc": "Iosevka-based CJK(Chinese, Japanese, Korean) monospaced coding font",
       "repo": "github:be5invis/Sarasa-Gothic",
       "url": null,
       "star": 4
     },
     {
-      "name": "Iosevka",
+      "name": "iosevka",
       "desc": "highly customizable open-source monospaced coding font",
       "repo": "github:be5invis/Iosevka",
       "url": "https://typeof.net/Iosevka",
       "star": 4
     },
     {
-      "name": "Pretendard",
+      "name": "pretendard",
       "desc": "Korea's standard open-source Korean UI font",
       "repo": "github:orioncactus/pretendard",
       "url": "https://cactus.tistory.com/306",
