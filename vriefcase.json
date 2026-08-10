@@ -14,6 +14,27 @@
       "star": 1
     },
     {
+      "name": "minifix",
+      "desc": "Lightweight file minifier, JavaScript, CSS, HTML, live-watching",
+      "repo": "github:ramoures/minifix",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "nodejs-blockchain",
+      "desc": "simple blockchain based on node.js",
+      "repo": "TakMashhido/Node.Js-Based-Blockchain",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "simple-blockchain",
+      "desc": "simple blockchain implementation in node.js",
+      "repo": "amarukensei/nodejs-blockchain",
+      "url": null,
+      "star": 3
+    },
+    {
       "name": "free-programming-books",
       "desc": "list of freely available programming books",
       "repo": "github:EbookFoundation/free-programming-books",
