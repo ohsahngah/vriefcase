@@ -231,13 +231,6 @@
       "star": 2
     },
     {
-      "name": "normizer",
-      "desc": "Beyond CSS reset, a smarter UI normalizer",
-      "repo": "github:ohsahngah/normizer",
-      "url": null,
-      "star": 0
-    },
-    {
       "name": "excalidraw",
       "desc": "Virtual whiteboard for sketching hand-drawn like diagrams",
       "repo": "github:excalidraw/excalidraw",
