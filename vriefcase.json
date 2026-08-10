@@ -9,7 +9,7 @@
     {
       "name": "free-programming-books",
       "desc": "list of freely available programming books",
-      "repo": "EbookFoundation/free-programming-books",
+      "repo": "github:EbookFoundation/free-programming-books",
       "url": "https://ebookfoundation.github.io/free-programming-books",
       "star": 5
     },
