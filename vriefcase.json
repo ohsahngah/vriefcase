@@ -43,7 +43,7 @@
     },
     {
       "name": "plight",
-      "desc": "lightweight reset CSS based on the Pretendard font for Korean websites"
+      "desc": "lightweight reset CSS based on the Pretendard font for Korean websites",
       "repo": "github:ohsahngah/plight",
       "url": null,
       "star": 5
