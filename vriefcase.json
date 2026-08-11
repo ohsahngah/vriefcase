@@ -7,6 +7,34 @@
   "star": 5,
   "repos": [
     {
+      "name": "nodebestpractices",
+      "desc": "The Node.js best practices list",
+      "repo": "github:goldbergyoni/nodebestpractices",
+      "url": "https://x.com/nodepractices",
+      "star": 5
+    },
+    {
+      "name": "awesome-nodejs",
+      "desc": "Delightful Node.js packages and resources",
+      "repo": "github:sindresorhus/awesome-nodejs",
+      "url": null,
+      "star": 4
+    },
+    {
+      "name": "janitor",
+      "desc": "The fastest development system in the world",
+      "repo": "github:JanitorTechnology/janitor",
+      "url": "https://janitor.technology",
+      "star": 1
+    },
+    {
+      "name": "rekap",
+      "desc": "CLI tool to see exactly where you left off in any git repo",
+      "repo": "github:AbhiVarde/rekap",
+      "url": null,
+      "star": 1
+    },
+    {
       "name": "isomorphic-git",
       "desc": "A pure JavaScript implementation of git for node and browsers",
       "repo": "github:isomorphic-git/isomorphic-git",
