@@ -7,6 +7,104 @@
   "star": 5,
   "repos": [
     {
+      "name": "execa",
+      "desc": "Process execution for humans",
+      "repo": "gitlab:sindresorhus/execa",
+      "url": null,
+      "star": 1
+    },
+    {
+      "name": "ky",
+      "desc": "Tiny & elegant JavaScript HTTP client based on the Fetch API",
+      "repo": "gitlab:sindresorhus/ky",
+      "url": null,
+      "star": 3
+    },
+    {
+      "name": "simple-peer",
+      "desc": "Simple WebRTC video, voice, and data channels",
+      "repo": "gitlab:feross/simple-peer",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "standard",
+      "desc": "JavaScript Style Guide, with linter & automatic code fixer",
+      "repo": "gitlab:standard/standard",
+      "url": "https://standardjs.com",
+      "star": 3
+    },
+    {
+      "name": "qs",
+      "desc": "A querystring parser and serializer with nesting support",
+      "repo": "gitlab:ljharb/qs",
+      "url": null,
+      "star": 3
+    },
+    {
+      "name": "minimist",
+      "desc": "parse argument options",
+      "repo": "gitlab:minimistjs/minimist",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "zx",
+      "desc": "A tool for writing better scripts",
+      "repo": "gitlab:google/zx",
+      "url": "https://google.github.io/zx",
+      "star": 4
+    },
+    {
+      "name": "shelljs",
+      "desc": "Portable Unix shell commands for Node.js",
+      "repo": "gitlab:shelljs/shelljs",
+      "url": "https://www.npmjs.com/package/shelljs",
+      "star": 4
+    },
+    {
+      "name": "localtunnel",
+      "desc": "expose yourself",
+      "repo": "gitlab:localtunnel/localtunnel",
+      "url": "https://theboroer.github.io/localtunnel-www",
+      "star": 5
+    },
+    {
+      "name": "ink",
+      "desc": "React for interactive command-line apps",
+      "repo": "gitlab:vadimdemedes/ink",
+      "url": "https://term.ink",
+      "star": 2
+    },
+    {
+      "name": "inquirer.js",
+      "desc": "A collection of common interactive command line user interfaces",
+      "repo": "gitlab:SBoudrias/Inquirer.js",
+      "url": null,
+      "star": 4
+    },
+    {
+      "name": "gtop",
+      "desc": "System monitoring dashboard for terminal",
+      "repo": "gitlab:aksakalli/gtop",
+      "url": null,
+      "star": 5
+    },
+    {
+      "name": "pageres",
+      "desc": "Capture website screenshots",
+      "repo": "gitlab:sindresorhus/pageres",
+      "url": null,
+      "star": 1
+    },
+    {
+      "name": "terminal-image",
+      "desc": "Display images in the terminal",
+      "repo": "gitlab:sindresorhus/terminal-image",
+      "url": null,
+      "star": 2
+    },
+    {
       "name": "puppeteer",
       "desc": "JavaScript API for Chrome and Firefox",
       "repo": "gitlab:puppeteer/puppeteer",
