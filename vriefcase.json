@@ -9,329 +9,329 @@
     {
       "name": "isomorphic-git",
       "desc": "A pure JavaScript implementation of git for node and browsers",
-      "repo": "gitlab:isomorphic-git/isomorphic-git",
+      "repo": "github:isomorphic-git/isomorphic-git",
       "url": "https://isomorphic-git.org",
       "star": 4
     },
     {
       "name": "commander.js",
       "desc": "node.js command-line interfaces made easy",
-      "repo": "gitlab:tj/commander.js",
+      "repo": "github:tj/commander.js",
       "url": null,
       "star": 4
     },
     {
       "name": "nock",
       "desc": "HTTP server mocking and expectations library for Node.js",
-      "repo": "gitlab:nock/nock",
+      "repo": "github:nock/nock",
       "url": null,
       "star": 2
     },
     {
       "name": "execa",
       "desc": "Process execution for humans",
-      "repo": "gitlab:sindresorhus/execa",
+      "repo": "github:sindresorhus/execa",
       "url": null,
       "star": 1
     },
     {
       "name": "ky",
       "desc": "Tiny & elegant JavaScript HTTP client based on the Fetch API",
-      "repo": "gitlab:sindresorhus/ky",
+      "repo": "github:sindresorhus/ky",
       "url": null,
       "star": 3
     },
     {
       "name": "simple-peer",
       "desc": "Simple WebRTC video, voice, and data channels",
-      "repo": "gitlab:feross/simple-peer",
+      "repo": "github:feross/simple-peer",
       "url": null,
       "star": 2
     },
     {
       "name": "standard",
       "desc": "JavaScript Style Guide, with linter & automatic code fixer",
-      "repo": "gitlab:standard/standard",
+      "repo": "github:standard/standard",
       "url": "https://standardjs.com",
       "star": 3
     },
     {
       "name": "qs",
       "desc": "A querystring parser and serializer with nesting support",
-      "repo": "gitlab:ljharb/qs",
+      "repo": "github:ljharb/qs",
       "url": null,
       "star": 3
     },
     {
       "name": "minimist",
       "desc": "parse argument options",
-      "repo": "gitlab:minimistjs/minimist",
+      "repo": "github:minimistjs/minimist",
       "url": null,
       "star": 2
     },
     {
       "name": "zx",
       "desc": "A tool for writing better scripts",
-      "repo": "gitlab:google/zx",
+      "repo": "github:google/zx",
       "url": "https://google.github.io/zx",
       "star": 4
     },
     {
       "name": "shelljs",
       "desc": "Portable Unix shell commands for Node.js",
-      "repo": "gitlab:shelljs/shelljs",
+      "repo": "github:shelljs/shelljs",
       "url": "https://www.npmjs.com/package/shelljs",
       "star": 4
     },
     {
       "name": "localtunnel",
       "desc": "expose yourself",
-      "repo": "gitlab:localtunnel/localtunnel",
+      "repo": "github:localtunnel/localtunnel",
       "url": "https://theboroer.github.io/localtunnel-www",
       "star": 5
     },
     {
       "name": "ink",
       "desc": "React for interactive command-line apps",
-      "repo": "gitlab:vadimdemedes/ink",
+      "repo": "github:vadimdemedes/ink",
       "url": "https://term.ink",
       "star": 2
     },
     {
       "name": "inquirer.js",
       "desc": "A collection of common interactive command line user interfaces",
-      "repo": "gitlab:SBoudrias/Inquirer.js",
+      "repo": "github:SBoudrias/Inquirer.js",
       "url": null,
       "star": 4
     },
     {
       "name": "gtop",
       "desc": "System monitoring dashboard for terminal",
-      "repo": "gitlab:aksakalli/gtop",
+      "repo": "github:aksakalli/gtop",
       "url": null,
       "star": 5
     },
     {
       "name": "pageres",
       "desc": "Capture website screenshots",
-      "repo": "gitlab:sindresorhus/pageres",
+      "repo": "github:sindresorhus/pageres",
       "url": null,
       "star": 1
     },
     {
       "name": "terminal-image",
       "desc": "Display images in the terminal",
-      "repo": "gitlab:sindresorhus/terminal-image",
+      "repo": "github:sindresorhus/terminal-image",
       "url": null,
       "star": 2
     },
     {
       "name": "puppeteer",
       "desc": "JavaScript API for Chrome and Firefox",
-      "repo": "gitlab:puppeteer/puppeteer",
+      "repo": "github:puppeteer/puppeteer",
       "url": "https://pptr.dev",
       "star": 3
     },
     {
       "name": "socket.io",
       "desc": "Bidirectional and low-latency communication for every platform",
-      "repo": "gitlab:socketio/socket.io",
+      "repo": "github:socketio/socket.io",
       "url": "https://socket.io",
       "star": 5
     },
     {
       "name": "node-fetch",
       "desc": "A light-weight module that brings the Fetch API to Node.js",
-      "repo": "gitlab:node-fetch/node-fetch",
+      "repo": "github:node-fetch/node-fetch",
       "url": null,
       "star": 2
     },
     {
       "name": "node-html-parser",
       "desc": "A very fast HTML parser, generating a simplified DOM, with basic element query support",
-      "repo": "gitlab:taoqf/node-html-parser",
+      "repo": "github:taoqf/node-html-parser",
       "url": null,
       "star": 1
     },
     {
       "name": "lowdb",
       "desc": "Simple and fast JSON database",
-      "repo": "gitlab:typicode/lowdb",
+      "repo": "github:typicode/lowdb",
       "url": null,
       "star": 3
     },
     {
       "name": "node-sqlite3",
       "desc": "SQLite3 bindings for Node.js",
-      "repo": "gitlab:TryGhost/node-sqlite3",
+      "repo": "github:TryGhost/node-sqlite3",
       "url": null,
       "star": 4
     },
     {
       "name": "sharp",
       "desc": "High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, AVIF and TIFF images. Uses the libvips library",
-      "repo": "gitlab:lovell/sharp",
+      "repo": "github:lovell/sharp",
       "url": "https://sharp.pixelplumbing.com",
       "star": 4
     },
     {
       "name": "node-pty",
       "desc": "Fork pseudoterminals in Node.JS",
-      "repo": "gitlab:microsoft/node-pty",
+      "repo": "github:microsoft/node-pty",
       "url": null,
       "star": 3
     },
     {
       "name": "tesseract.js",
       "desc": "Pure Javascript OCR for more than 100 Languages",
-      "repo": "gitlab:naptha/tesseract.js",
+      "repo": "github:naptha/tesseract.js",
       "url": "https://tesseract.projectnaptha.com",
       "star": 5
     },
     {
       "name": "pdf.js",
       "desc": "PDF Reader in JavaScript",
-      "repo": "gitlab:mozilla/pdf.js",
+      "repo": "github:mozilla/pdf.js",
       "url": "https://mozilla.github.io/pdf.js",
       "star": 3
     },
     {
       "name": "filer",
       "desc": "Node-like file system for browsers",
-      "repo": "gitlab:filerjs/filer",
+      "repo": "github:filerjs/filer",
       "url": null,
       "star": 2
     },
     {
       "name": "jimp",
       "desc": "An image processing library written entirely in JavaScript for Node, with zero external or native dependencies",
-      "repo": "gitlab:jimp-dev/jimp",
+      "repo": "github:jimp-dev/jimp",
       "url": "https://jimp-dev.github.io/jimp",
       "star": 5
     },
     {
       "name": "create-torrent",
       "desc": "Create .torrent files",
-      "repo": "gitlab:webtorrent/create-torrent",
+      "repo": "github:webtorrent/create-torrent",
       "url": "https://webtorrent.io",
       "star": 2
     },
     {
       "name": "webtorrent",
       "desc": "Streaming torrent client for the web",
-      "repo": "gitlab:webtorrent/webtorrent",
+      "repo": "github:webtorrent/webtorrent",
       "url": "https://webtorrent.io",
       "star": 4
     },
     {
       "name": "node-canvas",
       "desc": "Node canvas is a Cairo backed Canvas implementation for NodeJS",
-      "repo": "gitlab:Automattic/node-canvas",
+      "repo": "github:Automattic/node-canvas",
       "url": null,
       "star": 2
     },
     {
       "name": "js-interpreter",
       "desc": "A sandboxed JavaScript interpreter in JavaScript",
-      "repo": "gitlab:NeilFraser/JS-Interpreter",
+      "repo": "github:NeilFraser/JS-Interpreter",
       "url": null,
       "star": 2
     },
     {
       "name": "three.js",
       "desc": "JavaScript 3D Library",
-      "repo": "gitlab:mrdoob/three.js",
+      "repo": "github:mrdoob/three.js",
       "url": "https://threejs.org",
       "star": 1
     },
     {
       "name": "imba",
       "desc": "The friendly full-stack language",
-      "repo": "gitlab:imba/imba",
+      "repo": "github:imba/imba",
       "url": "https://imba.io",
       "star": 1
     },
     {
       "name": "recipes",
       "desc": "A collection of cooking recipes in json format",
-      "repo": "gitlab:dpapathanasiou/recipes",
+      "repo": "github:dpapathanasiou/recipes",
       "url": null,
       "star": 4
     },
     {
       "name": "gitfood",
       "desc": "A repo to collect my recipes and test ideas for CMed documentation",
-      "repo": "gitlab:jondavid-black/food",
+      "repo": "github:jondavid-black/food",
       "url": "https://gitfood.org",
       "star": 1
     },
     {
       "name": "awesome-public-datasets",
       "desc": "A topic-centric list of HQ open datasets",
-      "repo": "gitlab:awesomedata/awesome-public-datasets",
+      "repo": "github:awesomedata/awesome-public-datasets",
       "url": null,
       "star": 4
     },
     {
       "name": "openlibrary",
       "desc": "One webpage for every book ever published",
-      "repo": "gitlab:internetarchive/openlibrary",
+      "repo": "github:internetarchive/openlibrary",
       "url": "https://openlibrary.org",
       "star": 4
     },
     {
       "name": "dayjs",
       "desc": "2kB immutable date-time library alternative to Moment.js with the same modern API",
-      "repo": "gitlab:iamkun/dayjs#dev",
+      "repo": "github:iamkun/dayjs#dev",
       "url": "https://day.js.org",
       "star": 3
     },
     {
       "name": "axios",
       "desc": "Promise based HTTP client for the browser and node.js",
-      "repo": "gitlab:axios/axios",
+      "repo": "github:axios/axios",
       "url": "https://axios.rest",
       "star": 1
     },
     {
       "name": "uuid",
       "desc": "Generate RFC-compliant UUIDs in JavaScript",
-      "repo": "gitlab:uuidjs/uuid",
+      "repo": "github:uuidjs/uuid",
       "url": null,
       "star": 4
     },
     {
       "name": "nanoid",
       "desc": "A tiny (118 bytes), secure, URL-friendly, unique string ID generator for JavaScript",
-      "repo": "gitlab:ai/nanoid",
+      "repo": "github:ai/nanoid",
       "url": "https://zelark.github.io/nano-id-cc",
       "star": 3
     },
     {
       "name": "cowsay",
       "desc": "cowsay is a configurable talking cow",
-      "repo": "gitlab:piuccio/cowsay",
+      "repo": "github:piuccio/cowsay",
       "url": null,
       "star": 1
     },
     {
       "name": "country-flags",
       "desc": "SVG and PNG renders of all countries flags",
-      "repo": "gitlab:hampusborgos/country-flags",
+      "repo": "github:hampusborgos/country-flags",
       "url": null,
       "star": 4
     },
     {
       "name": "flag-icons",
       "desc": "A curated collection of all country flags in SVG",
-      "repo": "gitlab:lipis/flag-icons",
+      "repo": "github:lipis/flag-icons",
       "url": "https://flagicons.lipis.dev",
       "star": 5
     },
     {
       "name": "flags",
       "desc": "CSS flags of 195 recognised countries",
-      "repo": "gitlab:adam-sokolowski/flags",
+      "repo": "github:adam-sokolowski/flags",
       "url": null,
       "star": 2
     },
