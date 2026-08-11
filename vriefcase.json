@@ -7,6 +7,160 @@
   "star": 5,
   "repos": [
     {
+      "name": "tesseract.js",
+      "desc": "Pure Javascript OCR for more than 100 Languages",
+      "repo": "gitlab:naptha/tesseract.js",
+      "url": "https://tesseract.projectnaptha.com",
+      "star": 5
+    },
+    {
+      "name": "pdf.js",
+      "desc": "PDF Reader in JavaScript",
+      "repo": "gitlab:mozilla/pdf.js",
+      "url": "https://mozilla.github.io/pdf.js",
+      "star": 3
+    },
+    {
+      "name": "filer",
+      "desc": "Node-like file system for browsers",
+      "repo": "gitlab:filerjs/filer",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "jimp",
+      "desc": "An image processing library written entirely in JavaScript for Node, with zero external or native dependencies",
+      "repo": "gitlab:jimp-dev/jimp",
+      "url": "https://jimp-dev.github.io/jimp",
+      "star": 5
+    },
+    {
+      "name": "create-torrent",
+      "desc": "Create .torrent files",
+      "repo": "gitlab:webtorrent/create-torrent",
+      "url": "https://webtorrent.io",
+      "star": 2
+    },
+    {
+      "name": "webtorrent",
+      "desc": "Streaming torrent client for the web",
+      "repo": "gitlab:webtorrent/webtorrent",
+      "url": "https://webtorrent.io",
+      "star": 4
+    },
+    {
+      "name": "node-canvas",
+      "desc": "Node canvas is a Cairo backed Canvas implementation for NodeJS",
+      "repo": "gitlab:Automattic/node-canvas",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "js-interpreter",
+      "desc": "A sandboxed JavaScript interpreter in JavaScript",
+      "repo": "gitlab:NeilFraser/JS-Interpreter",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "three.js",
+      "desc": "JavaScript 3D Library",
+      "repo": "gitlab:mrdoob/three.js",
+      "url": "https://threejs.org",
+      "star": 1
+    },
+    {
+      "name": "imba",
+      "desc": "The friendly full-stack language",
+      "repo": "gitlab:imba/imba",
+      "url": "https://imba.io",
+      "star": 1
+    },
+    {
+      "name": "recipes",
+      "desc": "A collection of cooking recipes in json format",
+      "repo": "gitlab:dpapathanasiou/recipes",
+      "url": null,
+      "star": 4
+    },
+    {
+      "name": "gitfood",
+      "desc": "A repo to collect my recipes and test ideas for CMed documentation",
+      "repo": "gitlab:jondavid-black/food",
+      "url": "https://gitfood.org",
+      "star": 1
+    },
+    {
+      "name": "awesome-public-datasets",
+      "desc": "A topic-centric list of HQ open datasets",
+      "repo": "gitlab:awesomedata/awesome-public-datasets",
+      "url": null,
+      "star": 4
+    },
+    {
+      "name": "openlibrary",
+      "desc": "One webpage for every book ever published",
+      "repo": "gitlab:internetarchive/openlibrary",
+      "url": "https://openlibrary.org",
+      "star": 4
+    },
+    {
+      "name": "dayjs",
+      "desc": "2kB immutable date-time library alternative to Moment.js with the same modern API",
+      "repo": "gitlab:iamkun/dayjs#dev",
+      "url": "https://day.js.org",
+      "star": 3
+    },
+    {
+      "name": "axios",
+      "desc": "Promise based HTTP client for the browser and node.js",
+      "repo": "gitlab:axios/axios",
+      "url": "https://axios.rest",
+      "star": 1
+    },
+    {
+      "name": "uuid",
+      "desc": "Generate RFC-compliant UUIDs in JavaScript",
+      "repo": "gitlab:uuidjs/uuid",
+      "url": null,
+      "star": 4
+    },
+    {
+      "name": "nanoid",
+      "desc": "A tiny (118 bytes), secure, URL-friendly, unique string ID generator for JavaScript",
+      "repo": "gitlab:ai/nanoid",
+      "url": "https://zelark.github.io/nano-id-cc",
+      "star": 3
+    },
+    {
+      "name": "cowsay",
+      "desc": "cowsay is a configurable talking cow",
+      "repo": "gitlab:piuccio/cowsay",
+      "url": null,
+      "star": 1
+    },
+    {
+      "name": "country-flags",
+      "desc": "SVG and PNG renders of all countries flags",
+      "repo": "gitlab:hampusborgos/country-flags",
+      "url": null,
+      "star": 4
+    },
+    {
+      "name": "flag-icons",
+      "desc": "A curated collection of all country flags in SVG",
+      "repo": "gitlab:lipis/flag-icons",
+      "url": "https://flagicons.lipis.dev",
+      "star": 5
+    },
+    {
+      "name": "flags",
+      "desc": "CSS flags of 195 recognised countries",
+      "repo": "gitlab:adam-sokolowski/flags",
+      "url": null,
+      "star": 2
+    },
+    {
       "name": "minify-js",
       "desc": "recursively minify all JavaScript file",
       "repo": "gitlab:adamlui/minify-js",
