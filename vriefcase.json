@@ -7,6 +7,27 @@
   "star": 5,
   "repos": [
     {
+      "name": "isomorphic-git",
+      "desc": "A pure JavaScript implementation of git for node and browsers",
+      "repo": "gitlab:isomorphic-git/isomorphic-git",
+      "url": "https://isomorphic-git.org",
+      "star": 4
+    },
+    {
+      "name": "commander.js",
+      "desc": "node.js command-line interfaces made easy",
+      "repo": "gitlab:tj/commander.js",
+      "url": null,
+      "star": 4
+    },
+    {
+      "name": "nock",
+      "desc": "HTTP server mocking and expectations library for Node.js",
+      "repo": "gitlab:nock/nock",
+      "url": null,
+      "star": 2
+    },
+    {
       "name": "execa",
       "desc": "Process execution for humans",
       "repo": "gitlab:sindresorhus/execa",
