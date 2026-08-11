@@ -7,6 +7,62 @@
   "star": 5,
   "repos": [
     {
+      "name": "puppeteer",
+      "desc": "JavaScript API for Chrome and Firefox",
+      "repo": "gitlab:puppeteer/puppeteer",
+      "url": "https://pptr.dev",
+      "star": 3
+    },
+    {
+      "name": "socket.io",
+      "desc": "Bidirectional and low-latency communication for every platform",
+      "repo": "gitlab:socketio/socket.io",
+      "url": "https://socket.io",
+      "star": 5
+    },
+    {
+      "name": "node-fetch",
+      "desc": "A light-weight module that brings the Fetch API to Node.js",
+      "repo": "gitlab:node-fetch/node-fetch",
+      "url": null,
+      "star": 2
+    },
+    {
+      "name": "node-html-parser",
+      "desc": "A very fast HTML parser, generating a simplified DOM, with basic element query support",
+      "repo": "gitlab:taoqf/node-html-parser",
+      "url": null,
+      "star": 1
+    },
+    {
+      "name": "lowdb",
+      "desc": "Simple and fast JSON database",
+      "repo": "gitlab:typicode/lowdb",
+      "url": null,
+      "star": 3
+    },
+    {
+      "name": "node-sqlite3",
+      "desc": "SQLite3 bindings for Node.js",
+      "repo": "gitlab:TryGhost/node-sqlite3",
+      "url": null,
+      "star": 4
+    },
+    {
+      "name": "sharp",
+      "desc": "High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, AVIF and TIFF images. Uses the libvips library",
+      "repo": "gitlab:lovell/sharp",
+      "url": "https://sharp.pixelplumbing.com",
+      "star": 4
+    },
+    {
+      "name": "node-pty",
+      "desc": "Fork pseudoterminals in Node.JS",
+      "repo": "gitlab:microsoft/node-pty",
+      "url": null,
+      "star": 3
+    },
+    {
       "name": "tesseract.js",
       "desc": "Pure Javascript OCR for more than 100 Languages",
       "repo": "gitlab:naptha/tesseract.js",
