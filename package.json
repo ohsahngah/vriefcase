@@ -1,0 +1,36 @@
+{
+    "name": "vriefcase",
+    "version": "0.2.6",
+    "description": "the virtual briefcase for all intelligent beings",
+    "main": "vriefcase.js",
+    "bin": {
+        "vriefcase": "./vriefcase.js"
+    },
+    "files": [
+        "vriefcase.js",
+        "readme.md",
+        "license"
+    ],
+    "keywords": [
+        "vriefcase",
+        "git",
+        "github",
+        "gitlab",
+        "bitbucket",
+        "cli",
+        "ai"
+    ],
+    "engines": {
+        "node": ">=24.0.0"
+    },
+    "author": {
+        "name": "ohsahngah",
+        "email": "ohsahngah@gmail.com",
+        "url": "https://ohsahngah.github.io"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "degit": "^3.6.1",
+        "picocolors": "^1.1.1"
+    }
+}
