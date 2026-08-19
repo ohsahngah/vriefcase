@@ -6,7 +6,7 @@
  * Created in 2022 by OhSahngAh <ohsahngah@gmail.com>
  * 
  * Released under the MIT License.
- * https://ohsahngah.github.io/vriefcase/license
+ * https://vriefcase.github.io/license
  */
 
 const fs = require('fs');
@@ -20,14 +20,14 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.2.0';
-const DATA_URL = 'https://ohsahngah.github.io/vriefcase/vriefcase.json';
+const ver = 'v0.2.5';
+const DATA_URL = 'https://vriefcase.github.io/dataset.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
 const CACHE_FILE = path.join(os.tmpdir(), 'vriefcase.json');
 const CACHE_TTL = 60 * 60 * 1000;
 
-// 허용할 호스트 목록
+// 허용할 호스트 목록`
 const ALLOWED_HOSTS = [
     'github',
     'gitlab',
@@ -140,9 +140,10 @@ function validateSafePath() {
 }
 
 // 데이터셋을 가져오거나 캐시된 파일을 읽음
-async function fetchDataset() {
+async function fetchDataset(forceUpdate = false) {
     try {
-        if (fs.existsSync(CACHE_FILE)) {
+        // 강제 업데이트가 아닐 때만 캐시 유효성 검사 진행
+        if (!forceUpdate && fs.existsSync(CACHE_FILE)) {
             const stats = fs.statSync(CACHE_FILE);
             const now = Date.now();
             
@@ -191,10 +192,44 @@ async function fetchDataset() {
 }
 
 // 저장소에서 프로젝트 스냅샷을 추출
-async function extractSnapshot(repo) {
+async function extractSnapshot(repo, customPath) {
     const currentDir = process.cwd();
-    let destPath = path.join(currentDir, repo.name);
+    let destPath;
 
+    // 커스텀 경로가 지정된 경우 안전성 검사 진행
+    if (customPath) {
+        // 안전 검사 0: 역슬래시(\) 사용 차단 및 슬래시(/) 사용 안내 추가
+        if (customPath.includes('\\')) {
+            console.error(pc.red('Error: Backslashes (\\) are not allowed. Please use forward slashes (/) for paths.'));
+            return;
+        }
+
+        // 안전 검사 1: 절대 경로 및 Windows 드라이브 문자(C:, D: 등) 포함 여부 확인
+        if (path.isAbsolute(customPath) || /^[a-zA-Z]:/.test(customPath)) {
+            console.error(pc.red('Error: Absolute paths are not allowed for safety.'));
+            return;
+        }
+
+        // 안전 검사 2: 상위 디렉터리 접근(..) 확인 (../my-repo 등 차단)
+        const normalizedPath = path.normalize(customPath);
+        if (normalizedPath.startsWith('..') || normalizedPath.startsWith(path.sep + '..')) {
+            console.error(pc.red('Error: Accessing parent directories is not allowed for safety.'));
+            return;
+        }
+
+        //Git Bash 환경 감지 및 힌트 제공
+        // const isGitBash = process.platform === 'win32' && process.env.MSYSTEM;
+        
+        // if (isGitBash && !customPath.includes('/') && !customPath.includes('\\')) {
+        //     console.log(pc.yellow('Warning: In Git Bash, backslashes (\\) are ignored. Use forward slashes (/) for nested directories.'));
+        // }
+
+        destPath = path.join(currentDir, customPath);
+    } else {
+        destPath = path.join(currentDir, repo.name);
+    }
+
+    // 중복된 디렉터리 이름이 이미 존재한다면 타임스탬프 추가
     if (fs.existsSync(destPath)) {
         const timestamp = Date.now();
         destPath = `${destPath}_${timestamp}`;
@@ -268,7 +303,11 @@ async function main() {
     validateSafePath();
     if (process.exitCode === 1) return;
 
-    const dataset = await fetchDataset();
+    // 첫 번째 입력값이 '@vriefcase'인지 확인
+    const isSelfUpdate = args[0] && args[0].toLowerCase() === '@vriefcase';
+
+    // 해당 플래그를 전달하여 데이터셋 호출 (true일 경우 캐시 무시)
+    const dataset = await fetchDataset(isSelfUpdate);
     if (process.exitCode === 1) return;
 
     // --- 데이터 검증 로직 시작 (isActive 및 필수 키 체크) ---
@@ -374,6 +413,12 @@ async function main() {
 
         const exactTitle = query.slice(1).trim();
 
+        // 유효성 검사(한글 제외)
+        if (!/^[A-Za-z0-9._-]+$/.test(exactTitle)) {
+            console.error(pc.red('Error: Unsupported project name. Only A-Z, a-z, 0-9, . (Dot), _ (Underscore), and - (Hyphen) are allowed.'));
+            return;
+        }
+
         if (exactTitle.length < 2) {
             console.error(pc.red('Error: Minimum 2 characters required (excluding @).'));
             return;
@@ -388,13 +433,22 @@ async function main() {
             return;
         }
 
+        // 별점 0점 처리 로직 세분화
         if (repo.star === 0) {
+            if (exactTitle.toLowerCase() === 'vriefcase') {
+                // vriefcase이면서 0점일 경우: 업데이트 성공 메시지만 띄우고 추출 없이 종료
+                console.log(pc.green('Successfully updated vriefcase.json.'));
+                return;
+            }
+            
+            // 그 외 프로젝트가 0점일 경우: 에러 출력 후 종료
             console.log(pc.red('Error: Untrusted project.'));
             console.log(pc.red('Please contact the project maintainer.'));
             return;
         }
 
-        await extractSnapshot(repo);
+        const customPath = args[1]; // 두 번째 인자(원하는 디렉터리명) 가져오기
+        await extractSnapshot(repo, customPath);
         return;
     }
 
@@ -406,6 +460,13 @@ async function main() {
 
     // 입력된 모든 검색 인자를 소문자로 변환하여 배열로 준비
     let searchTerms = args.map(arg => arg.toLowerCase());
+
+    // 유효성 검사(한글 제외)
+    const hasInvalidTerm = searchTerms.some(term => !/^[a-z0-9._-]+$/.test(term));
+    if (hasInvalidTerm) {
+        console.error(pc.red('Error: Unsupported project name. Only A-Z, a-z, 0-9, . (Dot), _ (Underscore), and - (Hyphen) are allowed.'));
+        return;
+    }
 
     // hint 중복 검사 로직
     const uniqueTerms = new Set(searchTerms);
