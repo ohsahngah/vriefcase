@@ -19,8 +19,8 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.2.7';
-const DATA_URL = 'https://vriefcase.github.io/dataset.json';
+const ver = 'v0.2.9';
+const DATA_URL = 'https://vriefcase.github.io/assets/dataset.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
 const CACHE_FILE = path.join(os.tmpdir(), 'vriefcase.json');
@@ -395,7 +395,7 @@ async function main() {
             console.log(pc.yellow(`Using the last registered project.\n`));
         }
 
-        console.log('\nopen your virtual briefcase. discover your next project.');
+        console.log('\nopen your vriefcase & discover your next project.');
         return;
     }
 
