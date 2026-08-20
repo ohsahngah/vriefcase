@@ -1,6 +1,6 @@
 {
     "name": "vriefcase",
-    "version": "0.2.7",
+    "version": "0.2.9",
     "description": "the virtual briefcase for all intelligent beings",
     "main": "vriefcase.js",
     "bin": {
