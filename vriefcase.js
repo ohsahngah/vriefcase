@@ -19,7 +19,7 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.2.6';
+const ver = 'v0.2.7';
 const DATA_URL = 'https://vriefcase.github.io/dataset.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
