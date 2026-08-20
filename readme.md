@@ -1,7 +1,7 @@
 <div align="center">
-    <img width="256" src="https://vriefcase.github.io/image.webp" />
+    <img width="256" src="https://vriefcase.github.io/assets/images/image.webp" />
     <br />
-    <img width="100%" src="https://vriefcase.github.io/logo.webp" />
+    <img width="100%" src="https://vriefcase.github.io/assets/images/logo.webp" />
 </div>
 
 ---
