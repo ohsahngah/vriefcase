@@ -1,18 +1,55 @@
+:root {
+    --red:#e63946;
+    --sky: #9fb4cc;
+    --blue: #2563eb;
+    --green: #16a34a;
+    --yellow: #ffc107;
+    --dark: #343a40;
+    --gray: #d6dee8;
+    --black: #212529;
+
+    --white: #f2f2f2;
+    --cyber: #00ff00;
+
+    /* 사이즈 */
+    --container-width: 1600px;
+    --container-padding: 16px;
+    --container-mobile-padding: 8px;
+}
+
 /* ========================================
-   Pretendard Variable
+   Fonts
 ======================================== */
+
 @font-face {
-  font-family: 'pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('./fonts/pretendard.woff2') format('woff2-variations');
+  src: url("./fonts/pretendard.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "D2Coding";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/d2coding-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "D2Coding";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/d2coding-bold.woff2") format("woff2");
 }
 
 
 /* ========================================
    Reset
 ======================================== */
+
 *,
 *::before,
 *::after {
@@ -25,21 +62,42 @@
 /* ========================================
    Base
 ======================================== */
-html,
-body {
-  font-family: 'pretendard', sans-serif;
+
+html {
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+  font-style: normal;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
-
-  background-color: #fff;
   color: #111;
+  background-color: #fff;
+}
+
+
+/* ========================================
+   Monospace
+======================================== */
+
+code,
+kbd,
+pre,
+samp,
+.monospace {
+  font-family: "D2Coding", monospace;
 }
 
 
 /* ========================================
    Font Weight
 ======================================== */
+
 .font-thin {
   font-weight: 100;
 }
@@ -80,6 +138,7 @@ body {
 /* ========================================
    List
 ======================================== */
+
 ul,
 ol {
   list-style: none;
@@ -89,6 +148,7 @@ ol {
 /* ========================================
    Link
 ======================================== */
+
 a {
   color: inherit;
   text-decoration: none;
@@ -98,6 +158,7 @@ a {
 /* ========================================
    Image / Video
 ======================================== */
+
 img,
 video {
   display: block;
@@ -109,7 +170,11 @@ video {
 /* ========================================
    Button
 ======================================== */
-button {
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
   border: none;
   background: none;
   cursor: pointer;
@@ -120,19 +185,45 @@ button {
 /* ========================================
    Form
 ======================================== */
+
 input,
 textarea,
 select {
   border: none;
-  outline: none;
   background: none;
   font: inherit;
+  color: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+/* ========================================
+   Table
+======================================== */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* ========================================
+   Focus
+======================================== */
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 
 /* ========================================
    HTML5 Semantic Elements
 ======================================== */
+
 article,
 aside,
 footer,
@@ -142,3 +233,32 @@ section,
 main {
   display: block;
 }
+
+
+/* 아이폰 화면확대 방지 */
+@media (max-width: 1024px) {
+    input:focus,
+    textarea:focus {
+        font-size: 16px !important;
+    }
+}
+
+.reset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font-weight: 400;
+    line-height: 1.6;
+    font-family: inherit;
+    color: inherit;
+    background: transparent;
+    text-decoration: none;
+    list-style: none;
+    background: none;
+    cursor: auto;
+    display: block;
+}
+
+.pointer { cursor: pointer; }
