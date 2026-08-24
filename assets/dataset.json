@@ -7,6 +7,13 @@
   "star": 5,
   "repos": [
     {
+      "name": "chat-bubble",
+      "desc": "simple chatbot UI for the web with JSON scripting",
+      "repo": "github:dmitrizzle/chat-bubble",
+      "url": null,
+      "star": 3
+    },
+    {
       "name": "nodebestpractices",
       "desc": "The Node.js best practices list",
       "repo": "github:goldbergyoni/nodebestpractices",
