@@ -19,7 +19,7 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.2.9';
+const ver = 'v0.3.1';
 const DATA_URL = 'https://vriefcase.github.io/assets/dataset.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
@@ -216,13 +216,6 @@ async function extractSnapshot(repo, customPath) {
             return;
         }
 
-        //Git Bash 환경 감지 및 힌트 제공
-        // const isGitBash = process.platform === 'win32' && process.env.MSYSTEM;
-        
-        // if (isGitBash && !customPath.includes('/') && !customPath.includes('\\')) {
-        //     console.log(pc.yellow('Warning: In Git Bash, backslashes (\\) are ignored. Use forward slashes (/) for nested directories.'));
-        // }
-
         destPath = path.join(currentDir, customPath);
     } else {
         destPath = path.join(currentDir, repo.name);
@@ -412,9 +405,15 @@ async function main() {
 
         const exactTitle = query.slice(1).trim();
 
-        // 유효성 검사(한글 제외)
+        // 유효성 검사 1 (허용된 문자)
         if (!/^[A-Za-z0-9._-]+$/.test(exactTitle)) {
             console.error(pc.red('Error: Unsupported project name. Only A-Z, a-z, 0-9, . (Dot), _ (Underscore), and - (Hyphen) are allowed.'));
+            return;
+        }
+        
+        // 유효성 검사 2 (시작, 종료, 연속된 특수문자 방어)
+        if (/(^[._-])|([._-]$)|([._-]{2,})/.test(exactTitle)) {
+            console.error(pc.red('Error: Project name cannot start or end with ., -, or _, and cannot contain them consecutively.'));
             return;
         }
 
@@ -460,10 +459,17 @@ async function main() {
     // 입력된 모든 검색 인자를 소문자로 변환하여 배열로 준비
     let searchTerms = args.map(arg => arg.toLowerCase());
 
-    // 유효성 검사(한글 제외)
+    // 유효성 검사 1 (허용된 문자)
     const hasInvalidTerm = searchTerms.some(term => !/^[a-z0-9._-]+$/.test(term));
     if (hasInvalidTerm) {
-        console.error(pc.red('Error: Unsupported project name. Only A-Z, a-z, 0-9, . (Dot), _ (Underscore), and - (Hyphen) are allowed.'));
+        console.error(pc.red('Error: Unsupported search hints. Only A-Z, a-z, 0-9, . (Dot), _ (Underscore), and - (Hyphen) are allowed.'));
+        return;
+    }
+    
+    // 유효성 검사 2 (시작, 종료, 연속된 특수문자 방어)
+    const hasBadFormatTerm = searchTerms.some(term => /(^[._-])|([._-]$)|([._-]{2,})/.test(term));
+    if (hasBadFormatTerm) {
+        console.error(pc.red('Error: Search hints cannot start or end with ., -, or _, and cannot contain them consecutively.'));
         return;
     }
 
@@ -485,17 +491,23 @@ async function main() {
             const titleStr = (r.name || '').toLowerCase();
             const descStr = (r.desc || '').toLowerCase();
             
-            // OR 조건: 일치하는 힌트 개수(관련도) 계산
+            // OR 조건: 독립된 단어로 일치하는 힌트 개수(관련도) 계산
             let matchCount = 0;
             searchTerms.forEach(term => {
-                if (titleStr.includes(term) || descStr.includes(term)) {
+                // 입력된 검색어 중 정규식 특수문자(예: . - 등)가 있다면 안전하게 이스케이프 처리
+                const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                
+                // 단어 경계(\b)를 사용하여 독립된 단어로 쓰인 경우만 매칭
+                const regex = new RegExp(`\\b${escapedTerm}\\b`, 'i');
+                
+                if (regex.test(titleStr) || regex.test(descStr)) {
                     matchCount++;
                 }
             });
             
             return { ...r, matchCount };
         })
-        .filter(r => r.matchCount > 0) // 검색어가 하나라도 포함된 프로젝트만 필터링
+        .filter(r => r.matchCount > 0) // 검색어가 하나라도 포함된 프로젝트만 필터링 (OR 조건 유지)
         .sort((a, b) => {
             // 1순위 정렬: 관련도 (포함된 hint 개수) 내림차순
             if (b.matchCount !== a.matchCount) {
