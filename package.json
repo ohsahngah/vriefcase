@@ -1,6 +1,6 @@
 {
     "name": "vriefcase",
-    "version": "0.2.9",
+    "version": "0.3.1",
     "description": "the virtual briefcase for all intelligent beings",
     "main": "vriefcase.js",
     "bin": {
@@ -14,10 +14,18 @@
     "keywords": [
         "vriefcase",
         "git",
+        "git-clone",
+        "starter",
+        "scaffold",
         "github",
         "gitlab",
         "bitbucket",
+        "repository",
+        "repo",
         "cli",
+        "command-line",
+        "developer-tools",
+        "project-template",
         "ai"
     ],
     "engines": {
