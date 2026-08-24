@@ -47,18 +47,13 @@
 **vriefcase** supports all operating systems and major Git hosts (GitHub, GitLab, Bitbucket, etc.), allowing you to use it immediately after installation without any configuration.
 <br />
 
-You can choose between a global or local installation. **vriefcase recommends a global installation** for convenient use from any directory.
+**vriefcase must be installed globally** for convenient use from any directory.
 
-<b>Global Installation</b>:
+Global Installation:<br />
 ```bash
-$ npm install -g vriefcase
+$ npm i -g vriefcase
 ```
-
-<b>Local Installation</b>:<br />
-If you prefer to install vriefcase only within a specific project, you can install it locally.
-```bash
-$ npm install vriefcase
-```
+(Local installation via `npm i vriefcase` will be supported in an upcoming release.)
 
 <br />
 
