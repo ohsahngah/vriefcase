@@ -6,14 +6,259 @@
     <title>Vriefcase</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/styles.css" />
+    <script src="assets/scripts.js" defer></script>
+    <style>
+        /* 기본 여백 제거 및 스크롤 방지 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: var(--black, #000);
+        }
+
+        /* 매트릭스 배경 캔버스 */
+        #matrixCanvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* 중앙 정렬을 위한 래퍼 (로고 + 터미널 + 버튼) */
+        .content-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        /* 로고 이미지 스타일 */
+        .logo {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.2));
+        }
+
+        /* CLI 타이핑 컨테이너 */
+        .cli-container {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(4px);
+            padding: 24px 32px;
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.15);
+            color: var(--cyber, #00ff00);
+            font-size: 1.2rem;
+            box-sizing: border-box;
+            min-height: 80px;
+        }
+
+        /* 프롬프트 기호 */
+        .prompt {
+            color: var(--cyber, #00ff00);
+            margin-right: 8px;
+        }
+
+        /* 커서 깜빡임 애니메이션 */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: var(--cyber, #00ff00);
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ========================================
+           추가된 버튼 및 라이선스 영역 스타일
+        ======================================== */
+        .action-group {
+            text-align: center;
+            width: 100%;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 9px;
+        }
+
+        .cyber-btn {
+            padding: 6px 18px;
+            color: var(--cyber, #00ff00);
+            border: 1px solid var(--cyber, #00ff00);
+            background: rgba(0, 255, 0, 0.05);
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(2px);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none; /* a 태그 기본 밑줄 제거 */
+        }
+
+        .cyber-btn:hover {
+            background: var(--cyber, #00ff00);
+            color: var(--black, #000);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+        }
+
+        .license-info {
+            color: rgba(0, 255, 0, 0.5);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* 라이선스 링크 스타일 */
+        .license-info a {
+            color: rgba(0, 255, 0, 0.7);
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(0, 255, 0, 0.5);
+            padding-bottom: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .license-info a:hover {
+            color: var(--cyber, #00ff00);
+            border-bottom-color: var(--cyber, #00ff00);
+            text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Vriefcase</h1>
-    <p>The Virtual Briefcase for All Intelligent Beings.</p>
 
-    <div class="font-thin">Hello, Vriefcase! 안녕, 브리프케이스!</div>
-    <div class="font-regular">Hello, Vriefcase! 안녕, 브리프케이스!</div>
-    <div class="font-bold">Hello, Vriefcase! 안녕, 브리프케이스!</div>
+    <canvas id="matrixCanvas"></canvas>
+
+    <div class="content-wrapper">
+        <!-- 로고 이미지 -->
+        <img src="https://vriefcase.github.io/assets/images/logo.webp" alt="vriefcase logo" class="logo">
+
+        <!-- 터미널 효과 -->
+        <div class="cli-container monospace">
+            <span class="prompt">></span>
+            <span id="typing-text"></span><span class="cursor"></span>
+        </div>
+
+        <!-- 버튼 및 라이선스 영역 -->
+        <div class="action-group">
+            <div class="button-container">
+                <a href="mailto:vriefcase@gmail.com" class="cyber-btn monospace pointer">Get in Touch</a>
+                <a href="https://github.com/ohsahngah/vriefcase#readme" class="cyber-btn monospace pointer">Read Me!</a>
+                <a href="https://github.com/ohsahngah/vriefcase/pulls" class="cyber-btn monospace pointer">Pull Request</a>
+            </div>
+
+            <span class="license-info monospace">
+                Copyright © <a href="https://vriefcase.github.io" target="_blank" rel="noopener noreferrer">Vriefcase</a>. Licensed under the
+                <a href="https://vriefcase.github.io/license" target="_blank" rel="noopener noreferrer">MIT License</a>.
+            </span>
+        </div>
+    </div>
+
+    <script>
+        // --- 매트릭스 배경 효과 ---
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height, columns;
+        const fontSize = 16;
+        let drops = [];
+        
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            columns = Math.floor(width / fontSize);
+            
+            const currentDropsLength = drops.length;
+            for (let i = currentDropsLength; i < columns; i++) {
+                drops[i] = 1;
+            }
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, width, height);
+
+            ctx.fillStyle = 'rgba(0, 255, 0, 0.3)';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < columns; i++) {
+                const text = Math.random() > 0.5 ? '1' : '0';
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        setInterval(drawMatrix, 60);
+
+        // --- CLI 타이핑 효과 ---
+        const commands = [
+            "npm install --global vriefcase",
+            "npm i -g vriefcase",
+            "vriefcase popular css framework",
+            "vriefcase korean web font",
+            "vriefcase @bootstrap",
+            "vriefcase @pretendard",
+            // "vriefcase @bootstrap my-path",
+            // "vriefcase @bootstrap \"css/framework\""
+        ];
+
+        let cmdIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+
+        function typeCommand() {
+            const currentCommand = commands[cmdIndex];
+
+            if (isDeleting) {
+                typingElement.textContent = currentCommand.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentCommand.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 70;
+
+            if (!isDeleting && charIndex === currentCommand.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                cmdIndex = (cmdIndex + 1) % commands.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeCommand, typeSpeed);
+        }
+
+        setTimeout(typeCommand, 1000);
+    </script>
 </body>
 </html>
