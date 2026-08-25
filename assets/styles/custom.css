@@ -1,0 +1,135 @@
+/* 기본 여백 제거 및 스크롤 방지 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--black, #000);
+}
+
+/* 매트릭스 배경 캔버스 */
+#matrixCanvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* 중앙 정렬을 위한 래퍼 (로고 + 터미널 + 버튼) */
+.content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* 로고 이미지 스타일 */
+.logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.2));
+}
+
+/* CLI 타이핑 컨테이너 */
+.cli-container {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    padding: 24px 32px;
+    border: 1px solid rgba(0, 255, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.15);
+    color: var(--cyber, #00ff00);
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    min-height: 80px;
+}
+
+/* 프롬프트 기호 */
+.prompt {
+    color: var(--cyber, #00ff00);
+    margin-right: 8px;
+}
+
+/* 커서 깜빡임 애니메이션 */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: var(--cyber, #00ff00);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ========================================
+    추가된 버튼 및 라이선스 영역 스타일
+======================================== */
+.action-group {
+    text-align: center;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 9px;
+}
+
+.cyber-btn {
+    padding: 6px 18px;
+    color: var(--cyber, #00ff00);
+    border: 1px solid var(--cyber, #00ff00);
+    background: rgba(0, 255, 0, 0.05);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none; /* a 태그 기본 밑줄 제거 */
+}
+
+.cyber-btn:hover {
+    background: var(--cyber, #00ff00);
+    color: var(--black, #000);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+}
+
+.license-info {
+    color: rgba(0, 255, 0, 0.5);
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* 라이선스 링크 스타일 */
+.license-info a {
+    color: rgba(0, 255, 0, 0.7);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(0, 255, 0, 0.5);
+    padding-bottom: 1px;
+    transition: all 0.3s ease;
+}
+
+.license-info a:hover {
+    color: var(--cyber, #00ff00);
+    border-bottom-color: var(--cyber, #00ff00);
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+}
