@@ -7,6 +7,27 @@
   "star": 5,
   "repos": [
     {
+      "name": "osa",
+      "desc": "zero-dependency web starter for korean",
+      "repo": "github:ohsahngah/osa",
+      "url": null,
+      "star": 5
+    },
+    {
+      "name": "d2coding",
+      "desc": "korean-supporting monospaced font",
+      "repo": "github:vriefcase/d2coding",
+      "url": "https://naver.github.io/d2-coding-font",
+      "star": 5
+    },
+    {
+      "name": "gitignore",
+      "desc": "collection of useful .gitignore templates",
+      "repo": "github:github/gitignore",
+      "url": null,
+      "star": 3
+    },
+    {
       "name": "chat-bubble",
       "desc": "simple chatbot UI for the web with JSON scripting",
       "repo": "github:dmitrizzle/chat-bubble",
@@ -462,13 +483,6 @@
       "star": 3
     },
     {
-      "name": "d2coding",
-      "desc": "Korean-supporting monospaced font for developers by Naver",
-      "repo": "github:ohsahngah/d2coding",
-      "url": "https://naver.github.io/d2-coding-font",
-      "star": 5
-    },
-    {
       "name": "sarasa-gothic",
       "desc": "Iosevka-based CJK(Chinese, Japanese, Korean) monospaced coding font",
       "repo": "github:be5invis/Sarasa-Gothic",
@@ -484,16 +498,9 @@
     },
     {
       "name": "pretendard",
-      "desc": "Korea's standard open-source Korean UI font",
-      "repo": "github:orioncactus/pretendard",
+      "desc": "modern korean UI font",
+      "repo": "github:vriefcase/pretendard",
       "url": "https://cactus.tistory.com/306",
-      "star": 0
-    },
-    {
-      "name": "plight",
-      "desc": "lightweight reset CSS based on the Pretendard font for Korean websites",
-      "repo": "github:ohsahngah/plight",
-      "url": null,
       "star": 5
     },
     {
