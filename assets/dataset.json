@@ -36,35 +36,35 @@
     },
     {
       "name": "nodebestpractices",
-      "desc": "The Node.js best practices list",
+      "desc": "node.js best practices list",
       "repo": "github:goldbergyoni/nodebestpractices",
       "url": "https://x.com/nodepractices",
       "star": 5
     },
     {
       "name": "awesome-nodejs",
-      "desc": "Delightful Node.js packages and resources",
+      "desc": "delightful Node.js packages and resources",
       "repo": "github:sindresorhus/awesome-nodejs",
       "url": null,
       "star": 4
     },
     {
       "name": "janitor",
-      "desc": "The fastest development system in the world",
+      "desc": "fastest development system",
       "repo": "github:JanitorTechnology/janitor",
       "url": "https://janitor.technology",
       "star": 1
     },
     {
       "name": "rekap",
-      "desc": "CLI tool to see exactly where you left off in any git repo",
+      "desc": "git repo context CLI",
       "repo": "github:AbhiVarde/rekap",
       "url": null,
       "star": 1
     },
     {
       "name": "isomorphic-git",
-      "desc": "A pure JavaScript implementation of git for node and browsers",
+      "desc": "pure JS git for node & browsers",
       "repo": "github:isomorphic-git/isomorphic-git",
       "url": "https://isomorphic-git.org",
       "star": 4
@@ -85,14 +85,14 @@
     },
     {
       "name": "execa",
-      "desc": "Process execution for humans",
+      "desc": "process execution for humans",
       "repo": "github:sindresorhus/execa",
       "url": null,
       "star": 1
     },
     {
       "name": "ky",
-      "desc": "Tiny & elegant JavaScript HTTP client based on the Fetch API",
+      "desc": "tiny fetch-based HTTP client",
       "repo": "github:sindresorhus/ky",
       "url": null,
       "star": 3
@@ -106,14 +106,14 @@
     },
     {
       "name": "standard",
-      "desc": "JavaScript Style Guide, with linter & automatic code fixer",
+      "desc": "JavaScript style guide, linter, code fixer",
       "repo": "github:standard/standard",
       "url": "https://standardjs.com",
       "star": 3
     },
     {
       "name": "qs",
-      "desc": "A querystring parser and serializer with nesting support",
+      "desc": "querystring parser and serializer with nesting support",
       "repo": "github:ljharb/qs",
       "url": null,
       "star": 3
@@ -127,14 +127,14 @@
     },
     {
       "name": "zx",
-      "desc": "A tool for writing better scripts",
+      "desc": "tool for writing better scripts",
       "repo": "github:google/zx",
       "url": "https://google.github.io/zx",
       "star": 4
     },
     {
       "name": "shelljs",
-      "desc": "Portable Unix shell commands for Node.js",
+      "desc": "portable Unix shell commands for Node.js",
       "repo": "github:shelljs/shelljs",
       "url": "https://www.npmjs.com/package/shelljs",
       "star": 4
@@ -148,35 +148,35 @@
     },
     {
       "name": "ink",
-      "desc": "React for interactive command-line apps",
+      "desc": "react for interactive command-line apps",
       "repo": "github:vadimdemedes/ink",
       "url": "https://term.ink",
       "star": 2
     },
     {
       "name": "inquirer.js",
-      "desc": "A collection of common interactive command line user interfaces",
+      "desc": "interactive command-line UI",
       "repo": "github:SBoudrias/Inquirer.js",
       "url": null,
       "star": 4
     },
     {
       "name": "gtop",
-      "desc": "System monitoring dashboard for terminal",
+      "desc": "system monitoring dashboard for terminal",
       "repo": "github:aksakalli/gtop",
       "url": null,
       "star": 5
     },
     {
       "name": "pageres",
-      "desc": "Capture website screenshots",
+      "desc": "capture website screenshots",
       "repo": "github:sindresorhus/pageres",
       "url": null,
       "star": 1
     },
     {
       "name": "terminal-image",
-      "desc": "Display images in the terminal",
+      "desc": "display images in the terminal",
       "repo": "github:sindresorhus/terminal-image",
       "url": null,
       "star": 2
@@ -211,21 +211,21 @@
     },
     {
       "name": "lowdb",
-      "desc": "Simple and fast JSON database",
+      "desc": "simple and fast JSON database",
       "repo": "github:typicode/lowdb",
       "url": null,
       "star": 3
     },
     {
       "name": "node-sqlite3",
-      "desc": "SQLite3 bindings for Node.js",
+      "desc": "node.js SQLite3 database bindings",
       "repo": "github:TryGhost/node-sqlite3",
       "url": null,
       "star": 4
     },
     {
       "name": "sharp",
-      "desc": "High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, AVIF and TIFF images. Uses the libvips library",
+      "desc": "node.js image processing, libvips, JPEG, PNG, WebP, AVIF, TIFF",
       "repo": "github:lovell/sharp",
       "url": "https://sharp.pixelplumbing.com",
       "star": 4
@@ -239,56 +239,56 @@
     },
     {
       "name": "tesseract.js",
-      "desc": "Pure Javascript OCR for more than 100 Languages",
+      "desc": "pure JavaScript OCR, 100+ languages",
       "repo": "github:naptha/tesseract.js",
       "url": "https://tesseract.projectnaptha.com",
       "star": 5
     },
     {
       "name": "pdf.js",
-      "desc": "PDF Reader in JavaScript",
+      "desc": "PDF reader in JavaScript",
       "repo": "github:mozilla/pdf.js",
       "url": "https://mozilla.github.io/pdf.js",
       "star": 3
     },
     {
       "name": "filer",
-      "desc": "Node-like file system for browsers",
+      "desc": "node-like file system for browsers",
       "repo": "github:filerjs/filer",
       "url": null,
       "star": 2
     },
     {
       "name": "jimp",
-      "desc": "An image processing library written entirely in JavaScript for Node, with zero external or native dependencies",
+      "desc": "JavaScript image processing, Node, zero dependencies",
       "repo": "github:jimp-dev/jimp",
       "url": "https://jimp-dev.github.io/jimp",
       "star": 5
     },
     {
       "name": "create-torrent",
-      "desc": "Create .torrent files",
+      "desc": "create .torrent files",
       "repo": "github:webtorrent/create-torrent",
       "url": "https://webtorrent.io",
       "star": 2
     },
     {
       "name": "webtorrent",
-      "desc": "Streaming torrent client for the web",
+      "desc": "streaming torrent client for the web",
       "repo": "github:webtorrent/webtorrent",
       "url": "https://webtorrent.io",
       "star": 4
     },
     {
       "name": "node-canvas",
-      "desc": "Node canvas is a Cairo backed Canvas implementation for NodeJS",
+      "desc": "node canvas is a Cairo backed Canvas implementation for NodeJS",
       "repo": "github:Automattic/node-canvas",
       "url": null,
       "star": 2
     },
     {
       "name": "js-interpreter",
-      "desc": "A sandboxed JavaScript interpreter in JavaScript",
+      "desc": "sandboxed JavaScript interpreter",
       "repo": "github:NeilFraser/JS-Interpreter",
       "url": null,
       "star": 2
@@ -302,7 +302,7 @@
     },
     {
       "name": "imba",
-      "desc": "The friendly full-stack language",
+      "desc": "friendly full-stack language",
       "repo": "github:imba/imba",
       "url": "https://imba.io",
       "star": 1
@@ -316,35 +316,35 @@
     },
     {
       "name": "gitfood",
-      "desc": "A repo to collect my recipes and test ideas for CMed documentation",
+      "desc": "recipes and test ideas for CMed documentation",
       "repo": "github:jondavid-black/food",
       "url": "https://gitfood.org",
       "star": 1
     },
     {
       "name": "awesome-public-datasets",
-      "desc": "A topic-centric list of HQ open datasets",
+      "desc": "public datasets",
       "repo": "github:awesomedata/awesome-public-datasets",
       "url": null,
       "star": 4
     },
     {
       "name": "openlibrary",
-      "desc": "One webpage for every book ever published",
+      "desc": "one webpage for every book ever published",
       "repo": "github:internetarchive/openlibrary",
       "url": "https://openlibrary.org",
       "star": 4
     },
     {
       "name": "dayjs",
-      "desc": "2kB immutable date-time library alternative to Moment.js with the same modern API",
+      "desc": "2kb immutable date-time, moment.js alternative",
       "repo": "github:iamkun/dayjs#dev",
       "url": "https://day.js.org",
       "star": 3
     },
     {
       "name": "axios",
-      "desc": "Promise based HTTP client for the browser and node.js",
+      "desc": "promise-based HTTP client, browser, node.js",
       "repo": "github:axios/axios",
       "url": "https://axios.rest",
       "star": 1
@@ -358,7 +358,7 @@
     },
     {
       "name": "nanoid",
-      "desc": "A tiny (118 bytes), secure, URL-friendly, unique string ID generator for JavaScript",
+      "desc": "URL-friendly unique ID generator",
       "repo": "github:ai/nanoid",
       "url": "https://zelark.github.io/nano-id-cc",
       "star": 3
@@ -379,7 +379,7 @@
     },
     {
       "name": "flag-icons",
-      "desc": "A curated collection of all country flags in SVG",
+      "desc": "curated collection of all country flags in SVG",
       "repo": "github:lipis/flag-icons",
       "url": "https://flagicons.lipis.dev",
       "star": 5
@@ -421,14 +421,14 @@
     },
     {
       "name": "speed-test",
-      "desc": "Test your internet connection speed and ping using speedtest.net from the CLI",
+      "desc": "test your internet connection speed and ping using speedtest.net from the CLI",
       "repo": "github:sindresorhus/speed-test",
       "url": null,
       "star": 4
     },
     {
       "name": "is-online-cli",
-      "desc": "Check if the internet connection is up",
+      "desc": "check if the internet connection is up",
       "repo": "github:sindresorhus/is-online-cli",
       "url": null,
       "star": 3
@@ -442,7 +442,7 @@
     },
     {
       "name": "minifix",
-      "desc": "Lightweight file minifier, JavaScript, CSS, HTML, live-watching",
+      "desc": "lightweight file minifier, JavaScript, CSS, HTML, live-watching",
       "repo": "github:ramoures/minifix",
       "url": null,
       "star": 2
@@ -588,9 +588,9 @@
       "star": 5
     },
     {
-      "name": "nuxt-v2-starter",
-      "desc": "Starter template for the final Nuxt.js v2 release",
-      "repo": "github:ohsahngah/nuxt-v2-starter",
+      "name": "nuxt2starter",
+      "desc": "nuxt.js v2 final starter",
+      "repo": "github:vriefcase/nuxt2starter",
       "url": null,
       "star": 3
     },
@@ -715,49 +715,49 @@
     },
     {
       "name": "json-server",
-      "desc": "Get a full fake REST API with zero coding in less than 30 seconds",
+      "desc": "zero-coding fake REST API",
       "repo": "github:typicode/json-server",
       "url": null,
       "star": 3
     },
     {
       "name": "reveal.js",
-      "desc": "The HTML Presentation Framework",
+      "desc": "HTML presentation framework",
       "repo": "github:hakimel/reveal.js",
       "url": "https://hakim.se",
       "star": 4
     },
     {
-      "name": "Ladda",
-      "desc": "Buttons with built-in loading indicators",
+      "name": "ladda",
+      "desc": "buttons with built-in loading indicators",
       "repo": "github:hakimel/ladda",
       "url": "https://hakim.se",
       "star": 2
     },
     {
-      "name": "Docsify",
-      "desc": "A magical documentation site generator",
+      "name": "docsify",
+      "desc": "magical documentation site generator",
       "repo": "github:docsifyjs/docsify#develop",
       "url": "https://docsify.js.org",
       "star": 2
     },
     {
       "name": "Gitfolio",
-      "desc": "personal website + blog for every github user",
+      "desc": "personal website/blog for github users",
       "repo": "github:imfunniee/gitfolio",
       "url": "https://imfunniee.github.io/gitfolio",
       "star": 1
     },
     {
-      "name": "AdminLTE",
-      "desc": "Free admin dashboard template based on Bootstrap 5",
+      "name": "adminLTE",
+      "desc": "free bootstrap admin dashboard template",
       "repo": "github:ColorlibHQ/AdminLTE",
       "url": "https://colorlib.com",
       "star": 1
     },
     {
       "name": "bootstrap",
-      "desc": "popular HTML/CSS/JS responsive web UI framework for responsive",
+      "desc": "popular HTML/CSS/JS responsive web UI framework",
       "repo": "github:twbs/bootstrap",
       "url": "https://getbootstrap.com",
       "star": 5
@@ -869,49 +869,49 @@
     },
     {
       "name": "http-server",
-      "desc": "A simple, zero-configuration, command-line http server",
+      "desc": "zero-configuration command-line http server",
       "repo": "github:http-party/http-server",
       "url": null,
       "star": 2
     },
     {
       "name": "lucide",
-      "desc": "Beautiful & consistent icon toolkit made by the community",
+      "desc": "community-driven icon toolkit",
       "repo": "github:lucide-icons/lucide",
       "url": "https://lucide.dev",
       "star": 2
     },
     {
-      "name": "Font-Awesome",
-      "desc": "The iconic SVG, font, and CSS toolkit",
+      "name": "font-Awesome",
+      "desc": "iconic SVG/font/CSS toolkit",
       "repo": "github:FontAwesome/Font-Awesome",
       "url": "https://fontawesome.com",
       "star": 2
     },
     {
       "name": "heroicons",
-      "desc": "A set of free MIT-licensed high-quality SVG icons for UI development",
+      "desc": "beautiful hand-crafted SVG icons",
       "repo": "github:tailwindlabs/heroicons",
       "url": "https://heroicons.com",
       "star": 3
     },
     {
       "name": "tabler-icons",
-      "desc": "Set of over 6100 free MIT-licensed high-quality SVG icons for you to use in your web projects",
+      "desc": "free high-quality SVG icons",
       "repo": "github:tabler/tabler-icons",
       "url": "https://tabler.io/icons",
       "star": 4
     },
     {
       "name": "material-design-icons",
-      "desc": "Material Design icons by Google",
+      "desc": "material design icons by google",
       "repo": "github:google/material-design-icons",
       "url": null,
       "star": 5
     },
     {
       "name": "octicons",
-      "desc": "A scalable set of icons handcrafted",
+      "desc": "scalable handcrafted icons",
       "repo": "github:primer/octicons",
       "url": "https://primer.style/octicons",
       "star": 5

@@ -44,16 +44,66 @@
 <br />
 
 🟢 <u><b>Zero Configuration</b></u><br />
-**vriefcase** supports all operating systems and major Git hosts (GitHub, GitLab, Bitbucket, etc.), allowing you to use it immediately after installation without any configuration.
-<br />
+**vriefcase** supports all operating systems and major Git hosts (GitHub, GitLab, Bitbucket, etc.), allowing you to use it immediately after installation without any configuration. <br />
 
-**vriefcase must be installed globally** for convenient use from any directory.
+**vriefcase** can be installed either globally for CLI use or locally as a Node.js module for integration into your own projects.
 
 Global Installation:<br />
+
 ```bash
 $ npm i -g vriefcase
 ```
-(Local installation via `npm i vriefcase` will be supported in an upcoming release.)
+
+After a global installation, you can use **vriefcase** from any directory:
+
+```bash
+$ vriefcase
+```
+
+Local Installation:<br />
+
+```bash
+$ npm i vriefcase
+```
+
+A local installation allows you to import **vriefcase** directly into your Node.js project and use its functionality programmatically:
+
+```js
+// const vriefcase = require('vriefcase')
+import vriefcase from 'vriefcase'
+
+
+async function main() {
+    try {
+        // Extract a project automatically by project name
+        console.log('Extracting project...');
+        await vriefcase('@bootstrap');
+        console.log('Extraction complete!\n');
+
+        // Search for projects using multiple hints
+        const searchResults = await vriefcase('popular', 'css', 'framework');
+        if (searchResults.length > 0) {
+            console.log(`Found ${searchResults.length} project(s).`);
+            
+            // Display search results
+            searchResults.forEach(result => {
+                console.log(`- ${result.name} (${result.star}): ${result.desc}`);
+            });
+        } else {
+            console.log('No projects found.');
+        }
+
+    } catch (error) {
+        // Handle invalid project names, network errors, etc.
+        console.error('Error:', error.message);
+    }
+}
+
+
+main();
+```
+
+This makes **vriefcase** suitable not only for interactive CLI usage, but also for scripts, automation, build tools, and other Node.js applications.
 
 <br />
 

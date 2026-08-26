@@ -26,7 +26,7 @@ const DATA_URL = 'https://vriefcase.github.io/assets/dataset.json';
 const CACHE_FILE = path.join(os.tmpdir(), 'vriefcase.json');
 const CACHE_TTL = 60 * 60 * 1000;
 
-// 허용할 호스트 목록`
+// 허용할 호스트 목록
 const ALLOWED_HOSTS = [
     'github',
     'gitlab',
@@ -48,8 +48,7 @@ async function checkNetwork() {
     try {
         await dns.lookup('github.com');
     } catch (error) {
-        console.error(pc.red('Error: Online connection required.'));
-        process.exitCode = 1;
+        throw new Error('Online connection required.');
     }
 }
 
@@ -60,7 +59,6 @@ function getStarRateString(rate) {
     if (score < 0) score = 0;
     if (score > 5) score = 5;
     
-    // 소수점이 들어올 경우를 대비해 정수 처리
     score = Math.floor(score); 
     
     const filled = '★'.repeat(score);
@@ -77,7 +75,6 @@ function validateSafePath() {
     switch (process.platform) {
         case 'win32': {
             const drive = path.parse(process.cwd()).root;
-
             blocked = [
                 drive,
                 path.join(drive, 'Windows'),
@@ -90,40 +87,17 @@ function validateSafePath() {
             ];
             break;
         }
-
         case 'darwin': {
             blocked = [
-                '/',
-                '/System',
-                '/Library',
-                '/Applications',
-                '/bin',
-                '/sbin',
-                '/usr',
-                '/etc',
-                '/var',
-                '/private'
+                '/', '/System', '/Library', '/Applications', '/bin',
+                '/sbin', '/usr', '/etc', '/var', '/private'
             ];
             break;
         }
-
         default: { // Linux
             blocked = [
-                '/',
-                '/bin',
-                '/boot',
-                '/dev',
-                '/etc',
-                '/lib',
-                '/lib64',
-                '/proc',
-                '/root',
-                '/run',
-                '/sbin',
-                '/srv',
-                '/sys',
-                '/usr',
-                '/var'
+                '/', '/bin', '/boot', '/dev', '/etc', '/lib', '/lib64',
+                '/proc', '/root', '/run', '/sbin', '/srv', '/sys', '/usr', '/var'
             ];
             break;
         }
@@ -132,16 +106,13 @@ function validateSafePath() {
     blocked = blocked.map(dir => path.resolve(dir).toLowerCase());
 
     if (blocked.includes(cwd)) {
-        console.error(pc.red('Error: Safe path required.'));
-        console.error(pc.yellow(`Current path: ${process.cwd()}`));
-        process.exitCode = 1;
+        throw new Error(`Safe path required.\nCurrent path: ${process.cwd()}`);
     }
 }
 
 // 데이터셋을 가져오거나 캐시된 파일을 읽음
 async function fetchDataset(forceUpdate = false) {
     try {
-        // 강제 업데이트가 아닐 때만 캐시 유효성 검사 진행
         if (!forceUpdate && fs.existsSync(CACHE_FILE)) {
             const stats = fs.statSync(CACHE_FILE);
             const now = Date.now();
@@ -152,7 +123,6 @@ async function fetchDataset(forceUpdate = false) {
             }
         }
 
-        // URL 끝에 타임스탬프를 붙여 CDN/서버 캐싱 방지
         const cacheBustingUrl = `${DATA_URL}?_t=${Date.now()}`;
         const response = await fetch(cacheBustingUrl, {
             headers: {
@@ -166,54 +136,83 @@ async function fetchDataset(forceUpdate = false) {
         }
 
         const data = await response.json();
-        
         fs.writeFileSync(CACHE_FILE, JSON.stringify(data, null, 4), 'utf-8');
         return data;
     } catch (error) {
-        // 원격 데이터를 가져오지 못했을 때 기존 캐시가 있다면 비상용으로 반환 시도
         if (fs.existsSync(CACHE_FILE)) {
             try {
                 const rawData = fs.readFileSync(CACHE_FILE, 'utf-8');
                 return JSON.parse(rawData);
-            } catch (cacheError) {
-                // 캐시 파일 파싱마저 실패한 경우는 아래 에러 메시지로 넘김
-            }
+            } catch (cacheError) {}
         }
-
-        // JSON 파싱 실패 등 데이터를 정상적으로 가져오지 못한 경우 업데이트 안내
-        console.error(pc.red('\nError: Failed to fetch or parse dataset.'));
-        console.error(pc.red('The vriefcase.json file might be broken or network is unstable.'));
-        console.log(pc.yellow('Please update the application by running:\n'));
-        console.log('  ' + pc.cyan('npm install -g vriefcase\n'));
-        
-        process.exitCode = 1;
+        throw new Error('Failed to fetch or parse dataset.\nThe vriefcase.json file might be broken or network is unstable.\nPlease update the application by running:\n  npm install -g vriefcase');
     }
 }
 
-// 저장소에서 프로젝트 스냅샷을 추출
-async function extractSnapshot(repo, customPath) {
+// 저장소 목록을 가져오고 무결성 검증을 수행하는 내부 코어 함수
+async function loadValidRepositories(isSelfUpdate = false) {
+    await checkNetwork();
+    const dataset = await fetchDataset(isSelfUpdate);
+
+    let isBrokenDataset = false;
+
+    if (!dataset || typeof dataset !== 'object') {
+        isBrokenDataset = true;
+    } else if (dataset.isActive === false) {
+        isBrokenDataset = true;
+    } else {
+        const reposToCheck = dataset.repos || dataset.repo || [];
+        for (const item of reposToCheck) {
+            if (
+                !('name' in item) || !('desc' in item) ||
+                !('repo' in item) || !('url' in item) || !('star' in item)
+            ) {
+                isBrokenDataset = true;
+                break;
+            }
+        }
+    }
+
+    if (isBrokenDataset) {
+        throw new Error('Invalid, broken, or outdated vriefcase.json detected.\nPlease update the application by running:\n  npm install -g vriefcase');
+    }
+
+    const rawRepositories = dataset.repos || dataset.repo || [];
+    const repoMap = new Map();
+    const duplicateTitles = new Set();
+
+    for (const repo of rawRepositories) {
+        if (repo.repo && repo.repo.includes(':')) {
+            const host = repo.repo.split(':')[0].toLowerCase();
+            if (!ALLOWED_HOSTS.includes(host)) {
+                continue;
+            }
+        }
+
+        if (repoMap.has(repo.name)) {
+            duplicateTitles.add(repo.name);
+        }
+        repoMap.set(repo.name, repo);
+    }
+
+    return {
+        repositories: Array.from(repoMap.values()),
+        duplicateTitles
+    };
+}
+
+// 저장소에서 프로젝트 스냅샷을 추출하는 내부 코어 함수
+async function extractSnapshotCore(repo, customPath, isCLI = true) {
     const currentDir = process.cwd();
     let destPath;
 
-    // 커스텀 경로가 지정된 경우 안전성 검사 진행
     if (customPath) {
-        // 안전 검사 0: 역슬래시(\) 사용 차단 및 슬래시(/) 사용 안내 추가
-        if (customPath.includes('\\')) {
-            console.error(pc.red('Error: Backslashes (\\) are not allowed. Please use forward slashes (/) for paths.'));
-            return;
-        }
-
-        // 안전 검사 1: 절대 경로 및 Windows 드라이브 문자(C:, D: 등) 포함 여부 확인
-        if (path.isAbsolute(customPath) || /^[a-zA-Z]:/.test(customPath)) {
-            console.error(pc.red('Error: Absolute paths are not allowed for safety.'));
-            return;
-        }
-
-        // 안전 검사 2: 상위 디렉터리 접근(..) 확인 (../my-repo 등 차단)
+        if (customPath.includes('\\')) throw new Error('Backslashes (\\) are not allowed. Please use forward slashes (/) for paths.');
+        if (path.isAbsolute(customPath) || /^[a-zA-Z]:/.test(customPath)) throw new Error('Absolute paths are not allowed for safety.');
+        
         const normalizedPath = path.normalize(customPath);
         if (normalizedPath.startsWith('..') || normalizedPath.startsWith(path.sep + '..')) {
-            console.error(pc.red('Error: Accessing parent directories is not allowed for safety.'));
-            return;
+            throw new Error('Accessing parent directories is not allowed for safety.');
         }
 
         destPath = path.join(currentDir, customPath);
@@ -221,7 +220,6 @@ async function extractSnapshot(repo, customPath) {
         destPath = path.join(currentDir, repo.name);
     }
 
-    // 중복된 디렉터리 이름이 이미 존재한다면 타임스탬프 추가
     if (fs.existsSync(destPath)) {
         const timestamp = Date.now();
         destPath = `${destPath}_${timestamp}`;
@@ -230,32 +228,31 @@ async function extractSnapshot(repo, customPath) {
     let degitPath = repo.repo;
     let branchName = null;
 
-    // repo 문자열에서 '#' 기호를 기준으로 브랜치명을 추출
     if (degitPath && degitPath.includes('#')) {
         const parts = degitPath.split('#');
         branchName = parts[1];
     }
 
-    if (branchName) {
-        console.log(`Extracting project snapshot from '${repo.name}/${branchName}' to '${destPath}'...`);
-    } else {
-        // branch가 명시되지 않은 경우 degit이 기본적으로 main/master를 복제
-        console.log(`Extracting project snapshot from '${repo.name}' to '${destPath}'...`);
+    if (isCLI) {
+        if (branchName) {
+            console.log(`Extracting project snapshot from '${repo.name}/${branchName}' to '${destPath}'...`);
+        } else {
+            console.log(`Extracting project snapshot from '${repo.name}' to '${destPath}'...`);
+        }
     }
 
-    const emitter = degit(degitPath, {
-        cache: false,
-        force: true
-    });
-
-    // 5초 이상 걸릴 경우 사용자 안내 타이머 시작
-    const noticeTimer = setTimeout(() => {
-        console.log(pc.dim('Taking longer than expected? Press Ctrl+C to cancel extraction.'));
-    }, 5000);
+    const emitter = degit(degitPath, { cache: false, force: true });
+    
+    let noticeTimer;
+    if (isCLI) {
+        noticeTimer = setTimeout(() => {
+            console.log(pc.dim('Taking longer than expected? Press Ctrl+C to cancel extraction.'));
+        }, 5000);
+    }
 
     try {
         await emitter.clone(destPath);
-        clearTimeout(noticeTimer); // 추출 성공 시 안내 타이머 해제
+        if (isCLI) clearTimeout(noticeTimer);
         
         let removedItems = [];
         REMOVE_TARGETS.forEach(target => {
@@ -266,105 +263,133 @@ async function extractSnapshot(repo, customPath) {
             }
         });
 
-        const removedMsg = removedItems.length > 0 
-            ? ` (Removed: ${removedItems.join(', ')})` 
-            : '';
-
-        console.log(pc.green('Successfully extracted project snapshot!'));
-    } catch (error) {
-        clearTimeout(noticeTimer); // 에러 발생 시 안내 타이머 해제
-        console.error(pc.red('\nError: Failed to extract project snapshot.'));
-        
-        if (error.code === 'MISSING_REF') {
-            console.error(pc.red('Error: Project inaccessible or specified branch not found.'));
-        } else if (error.code === 'COULD_NOT_DOWNLOAD') {
-            console.error(pc.red('Error: Network connection and project info check required.'));
-        } else {
-            console.error(pc.red(`Error details: ${error.message}`));
+        if (isCLI) {
+            const removedMsg = removedItems.length > 0 ? ` (Removed: ${removedItems.join(', ')})` : '';
+            console.log(pc.green(`Successfully extracted project snapshot!${removedMsg}`));
         }
+    } catch (error) {
+        if (isCLI) clearTimeout(noticeTimer);
+        
+        let errorMsg = 'Failed to extract project snapshot.';
+        if (error.code === 'MISSING_REF') {
+            errorMsg = 'Project inaccessible or specified branch not found.';
+        } else if (error.code === 'COULD_NOT_DOWNLOAD') {
+            errorMsg = 'Network connection and project info check required.';
+        } else {
+            errorMsg = `Details: ${error.message}`;
+        }
+        throw new Error(errorMsg);
     }
 }
 
-// 메인 실행 로직
-async function main() {
-    const args = process.argv.slice(2);
+// ------------------------------------------------------------------
+// 모듈 배포용 외부 API (Node.js 환경 내 프로그래밍 방식)
+// ------------------------------------------------------------------
 
-    await checkNetwork();
-    if (process.exitCode === 1) return;
+/**
+ * vriefcase 저장소에서 프로젝트를 검색합니다.
+ * @param {string|string[]} hints - 검색 키워드 (예: 'css', ['react', 'starter'])
+ * @returns {Promise<Array>} 매칭된 프로젝트 객체 배열
+ */
+async function search(hints) {
+    let searchTerms = Array.isArray(hints) ? hints : hints.split(' ');
+    searchTerms = searchTerms.map(arg => arg.toLowerCase());
 
-    validateSafePath();
-    if (process.exitCode === 1) return;
+    if (searchTerms.length < 1) throw new Error('Search hints required.');
 
-    // 첫 번째 입력값이 '@vriefcase'인지 확인
-    const isSelfUpdate = args[0] && args[0].toLowerCase() === '@vriefcase';
+    const hasInvalidTerm = searchTerms.some(term => !/^[a-z0-9._-]+$/.test(term));
+    if (hasInvalidTerm) throw new Error('Unsupported search hints. Only A-Z, a-z, 0-9, ., _, and - are allowed.');
+    
+    const hasBadFormatTerm = searchTerms.some(term => /(^[._-])|([._-]$)|([._-]{2,})/.test(term));
+    if (hasBadFormatTerm) throw new Error('Search hints cannot start or end with ., -, or _, and cannot contain them consecutively.');
 
-    // 해당 플래그를 전달하여 데이터셋 호출 (true일 경우 캐시 무시)
-    const dataset = await fetchDataset(isSelfUpdate);
-    if (process.exitCode === 1) return;
-
-    // --- 데이터 검증 로직 시작 (isActive 및 필수 키 체크) ---
-    let isBrokenDataset = false;
-
-    // 객체 형태가 아니거나 데이터가 없는 경우
-    if (!dataset || typeof dataset !== 'object') {
-        isBrokenDataset = true;
-    } 
-    // isActive 속성이 false로 설정된 경우
-    else if (dataset.isActive === false) {
-        isBrokenDataset = true;
-    } 
-    else {
-        // 기존 코드의 'repo'와 언급된 'repos' 모두 호환 가능하도록 처리
-        const reposToCheck = dataset.repos || dataset.repo || [];
-        
-        // 필수 키가 누락된 아이템이 있는지 검사
-        for (const item of reposToCheck) {
-            if (
-                !('name' in item) ||
-                !('desc' in item) ||
-                !('repo' in item) ||
-                !('url' in item) ||
-                !('star' in item)
-            ) {
-                isBrokenDataset = true;
-                break;
-            }
-        }
+    const uniqueTerms = new Set(searchTerms);
+    if (uniqueTerms.size < searchTerms.length) {
+        searchTerms = Array.from(uniqueTerms);
     }
 
-    if (isBrokenDataset) {
-        console.error(pc.red('\nError: Invalid, broken, or outdated vriefcase.json detected.'));
-        console.log(pc.yellow('Please update the application by running:\n'));
-        console.log('  ' + pc.cyan('npm install -g vriefcase\n'));
+    if (searchTerms.length > 5) searchTerms = searchTerms.slice(0, 5);
+
+    const { repositories } = await loadValidRepositories();
+
+    return repositories
+        .filter(r => {
+            const titleStr = (r.name || '').toLowerCase();
+            const descStr = (r.desc || '').toLowerCase();
+            return searchTerms.every(term => titleStr.includes(term) || descStr.includes(term));
+        })
+        .sort((a, b) => (b.star || 0) - (a.star || 0));
+}
+
+/**
+ * 프로젝트의 스냅샷을 추출(다운로드)합니다.
+ * @param {string} projectName - 추출할 프로젝트 이름 (예: 'osa')
+ * @param {string} [customPath] - (선택) 직접 지정할 디렉터리 경로
+ * @returns {Promise<void>}
+ */
+async function extract(projectName, customPath = null) {
+    if (!projectName || typeof projectName !== 'string') {
+        throw new Error('Valid project name required.');
+    }
+
+    const exactTitle = projectName.startsWith('@') ? projectName.slice(1).trim() : projectName.trim();
+
+    if (!/^[A-Za-z0-9._-]+$/.test(exactTitle)) throw new Error('Unsupported project name.');
+    if (/(^[._-])|([._-]$)|([._-]{2,})/.test(exactTitle)) throw new Error('Project name invalid format.');
+    if (exactTitle.length < 2) throw new Error('Minimum 2 characters required.');
+
+    validateSafePath();
+
+    const { repositories } = await loadValidRepositories();
+    const repo = repositories.find(r => r.name.toLowerCase() === exactTitle.toLowerCase());
+
+    if (!repo) {
+        throw new Error('Project not found.');
+    }
+
+    if (repo.star === 0) {
+        if (exactTitle.toLowerCase() === 'vriefcase') return; // vriefcase 자체 업데이트 시엔 바로 종료
+        throw new Error('Untrusted project. Please contact the project maintainer.');
+    }
+
+    await extractSnapshotCore(repo, customPath, false); // CLI 모드가 아니므로 로그 미출력
+}
+
+
+// ------------------------------------------------------------------
+// CLI(터미널 명령어) 실행 로직
+// ------------------------------------------------------------------
+async function main() {
+    const args = process.argv.slice(2);
+    
+    let datasetInfo;
+    try {
+        datasetInfo = await loadValidRepositories(args[0] && args[0].toLowerCase() === '@vriefcase');
+    } catch (error) {
+        const errorLines = error.message.split('\n');
+        console.error(pc.red('\nError: ' + errorLines[0]));
+        if (errorLines.length > 1) {
+            errorLines.slice(1).forEach(line => {
+                if (line.includes('npm install')) console.log('  ' + pc.cyan(line.trim()) + '\n');
+                else console.log(pc.yellow(line));
+            });
+        }
         process.exitCode = 1;
         return;
     }
-    // --- 데이터 검증 로직 종료 ---
 
-    // 검증이 완료된 데이터를 할당
-    const rawRepositories = dataset.repos || dataset.repo || [];
-
-    // 중복 제거 및 허용된 호스트(GitHub, GitLab, Bitbucket) 필터링 로직
-    const repoMap = new Map();
-    const duplicateTitles = new Set();
-
-    for (const repo of rawRepositories) {
-        if (repo.repo && repo.repo.includes(':')) {
-            const host = repo.repo.split(':')[0].toLowerCase();
-            if (!ALLOWED_HOSTS.includes(host)) {
-                continue; // 허용되지 않은 호스트(sourcehut 등)는 제외
-            }
-        }
-
-        if (repoMap.has(repo.name)) {
-            duplicateTitles.add(repo.name);
-        }
-        repoMap.set(repo.name, repo);
+    try {
+        validateSafePath();
+    } catch(error) {
+        console.error(pc.red('Error: Safe path required.'));
+        console.error(pc.yellow(`Current path: ${process.cwd()}`));
+        process.exitCode = 1;
+        return;
     }
 
-    // 병합 및 필터링이 완료된 안전한 저장소 목록을 최종 배열로 사용
-    const repositories = Array.from(repoMap.values());
+    const { repositories, duplicateTitles } = datasetInfo;
 
+    // 도움말 출력
     if (args.length === 0) {
         console.log(pc.bold(pc.cyan('\nvriefcase')), ver);
         console.log('the virtual briefcase for all intelligent beings.\n');
@@ -372,17 +397,18 @@ async function main() {
         console.log(pc.bold('\nusage:\n'));
 
         console.log(`  ${pc.cyan('vriefcase')}`);
-        console.log(`  show help and discover projects.\n`);
+        console.log(`  show help and guidance.\n`);
 
         console.log(`  ${pc.cyan('vriefcase')} ${pc.dim('<project hint...>')}`);
-        console.log(`  search projects using hints.`);
+        console.log(`  discover projects using hints.`);
         console.log(`  ex: ${pc.dim('vriefcase popular css framework')}\n`);
 
-        console.log(`  ${pc.cyan('vriefcase')} @${pc.dim('<project-name>')}`);
+        console.log(`  ${pc.cyan('vriefcase')} @${pc.dim('<project-name>')} ${pc.dim('[custom-name]')}`);
         console.log(`  extract project snapshot to local machine.`);
-        console.log(`  ex: ${pc.dim('vriefcase @bootstrap')}\n`);
+        console.log(`  ex: ${pc.dim('vriefcase @bootstrap')}`);
+        console.log(`  ex: ${pc.dim('vriefcase @bootstrap ui')}`);
+        console.log(`  ex: ${pc.dim('vriefcase @bootstrap ui/bootstrap')}\n`);
 
-        // 중복 name이 존재할 경우 경고 메시지 노출
         if (duplicateTitles.size > 0) {
             console.log('\n' + pc.yellow(`Warning: Duplicate project names detected (${Array.from(duplicateTitles).join(', ')}).`));
             console.log(pc.yellow(`Using the last registered project.\n`));
@@ -405,13 +431,11 @@ async function main() {
 
         const exactTitle = query.slice(1).trim();
 
-        // 유효성 검사 1 (허용된 문자)
         if (!/^[A-Za-z0-9._-]+$/.test(exactTitle)) {
             console.error(pc.red('Error: Unsupported project name. Only A-Z, a-z, 0-9, . (Dot), _ (Underscore), and - (Hyphen) are allowed.'));
             return;
         }
         
-        // 유효성 검사 2 (시작, 종료, 연속된 특수문자 방어)
         if (/(^[._-])|([._-]$)|([._-]{2,})/.test(exactTitle)) {
             console.error(pc.red('Error: Project name cannot start or end with ., -, or _, and cannot contain them consecutively.'));
             return;
@@ -422,31 +446,31 @@ async function main() {
             return;
         }
 
-        const repo = repositories.find(
-            r => r.name.toLowerCase() === exactTitle.toLowerCase()
-        );
+        const repo = repositories.find(r => r.name.toLowerCase() === exactTitle.toLowerCase());
 
         if (!repo) {
             console.log(pc.red('Error: Valid project name required.'));
             return;
         }
 
-        // 별점 0점 처리 로직 세분화
         if (repo.star === 0) {
             if (exactTitle.toLowerCase() === 'vriefcase') {
-                // vriefcase이면서 0점일 경우: 업데이트 성공 메시지만 띄우고 추출 없이 종료
                 console.log(pc.green('Successfully updated vriefcase.json.'));
                 return;
             }
-            
-            // 그 외 프로젝트가 0점일 경우: 에러 출력 후 종료
             console.log(pc.red('Error: Untrusted project.'));
             console.log(pc.red('Please contact the project maintainer.'));
             return;
         }
 
-        const customPath = args[1]; // 두 번째 인자(원하는 디렉터리명) 가져오기
-        await extractSnapshot(repo, customPath);
+        const customPath = args[1]; // CLI에서 제공한 두 번째 인자를 커스텀 경로로 사용
+        try {
+            await extractSnapshotCore(repo, customPath, true);
+        } catch (err) {
+            console.error(pc.red('\nError: Failed to extract project snapshot.'));
+            console.error(pc.red(err.message));
+            process.exitCode = 1;
+        }
         return;
     }
 
@@ -456,31 +480,26 @@ async function main() {
         return;
     }
 
-    // 입력된 모든 검색 인자를 소문자로 변환하여 배열로 준비
     let searchTerms = args.map(arg => arg.toLowerCase());
 
-    // 유효성 검사 1 (허용된 문자)
     const hasInvalidTerm = searchTerms.some(term => !/^[a-z0-9._-]+$/.test(term));
     if (hasInvalidTerm) {
         console.error(pc.red('Error: Unsupported search hints. Only A-Z, a-z, 0-9, . (Dot), _ (Underscore), and - (Hyphen) are allowed.'));
         return;
     }
     
-    // 유효성 검사 2 (시작, 종료, 연속된 특수문자 방어)
     const hasBadFormatTerm = searchTerms.some(term => /(^[._-])|([._-]$)|([._-]{2,})/.test(term));
     if (hasBadFormatTerm) {
         console.error(pc.red('Error: Search hints cannot start or end with ., -, or _, and cannot contain them consecutively.'));
         return;
     }
 
-    // hint 중복 검사 로직
     const uniqueTerms = new Set(searchTerms);
     if (uniqueTerms.size < searchTerms.length) {
         console.log(pc.yellow('\nWarning: Duplicate hints detected. Duplicates have been removed.'));
         searchTerms = Array.from(uniqueTerms);
     }
 
-    // hint 최대 5개 제한 및 초과 시 경고 메시지 출력
     if (searchTerms.length > 5) {
         console.log(pc.yellow('\nWarning: Maximum of 5 hints allowed. Additional hints will be ignored.'));
         searchTerms = searchTerms.slice(0, 5);
@@ -490,13 +509,9 @@ async function main() {
         .filter(r => {
             const titleStr = (r.name || '').toLowerCase();
             const descStr = (r.desc || '').toLowerCase();
-            
-            // AND 조건 & 부분 일치: 검색어(searchTerms)가 모두 포함되어야 함
-            return searchTerms.every(term => 
-                titleStr.includes(term) || descStr.includes(term)
-            );
+            return searchTerms.every(term => titleStr.includes(term) || descStr.includes(term));
         })
-        .sort((a, b) => (b.star || 0) - (a.star || 0)); // star 기준 내림차순 정렬
+        .sort((a, b) => (b.star || 0) - (a.star || 0));
 
     if (searchResults.length === 0) {
         console.log(pc.red('Error: No related project found.'));
@@ -507,7 +522,6 @@ async function main() {
             let repoPath = fullRepo;
             let branchName = '';
 
-            // repo 키 내부에서 브랜치명을 분리
             if (fullRepo.includes('#')) {
                 const parts = fullRepo.split('#');
                 repoPath = parts[0];
@@ -554,10 +568,44 @@ async function main() {
 
             console.log();
         });
-        console.log(
-            `total: ${searchResults.length} ${searchResults.length <= 1 ? 'project' : 'projects'}`
-        );
+        console.log(`total: ${searchResults.length} ${searchResults.length <= 1 ? 'project' : 'projects'}`);
     }
 }
 
-main();
+// ------------------------------------------------------------------
+// 모듈 내보내기 & CLI 실행 제어
+// ------------------------------------------------------------------
+
+/**
+ * vriefcase 메인 모듈 함수
+ * 첫 번째 전달인자가 '@'로 시작하면 추출(extract), 그렇지 않으면 검색(search)을 수행합니다.
+ */
+async function vriefcaseModule(...args) {
+    if (args.length === 0) {
+        throw new Error('Arguments required. Please provide a project name to extract or keywords to search.');
+    }
+
+    const query = args[0];
+
+    // 첫 번째 인자가 문자열이고 '@'로 시작하는 경우 추출(Extract)
+    if (typeof query === 'string' && query.startsWith('@')) {
+        const customPath = typeof args[1] === 'string' ? args[1] : null;
+        return await extract(query, customPath);
+    } 
+    // 그 외의 경우 전체 인자를 검색어 배열로 취급하여 검색(Search)
+    else {
+        return await search(args);
+    }
+}
+
+// 기존 구조 분해 할당 방식({ search, extract })도 지원하기 위해 프로퍼티로 할당
+vriefcaseModule.search = search;
+vriefcaseModule.extract = extract;
+
+// vriefcaseModule 래퍼 함수를 기본으로 내보냄
+module.exports = vriefcaseModule;
+
+// 파일이 직접 실행되었을 경우에만 터미널 명령어(main) 작동
+if (require.main === module) {
+    main();
+}
