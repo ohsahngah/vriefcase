@@ -19,7 +19,7 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.3.1';
+const ver = 'v0.3.3';
 const DATA_URL = 'https://vriefcase.github.io/assets/dataset.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
@@ -487,35 +487,16 @@ async function main() {
     }
 
     const searchResults = repositories
-        .map(r => {
+        .filter(r => {
             const titleStr = (r.name || '').toLowerCase();
             const descStr = (r.desc || '').toLowerCase();
             
-            // OR 조건: 독립된 단어로 일치하는 힌트 개수(관련도) 계산
-            let matchCount = 0;
-            searchTerms.forEach(term => {
-                // 입력된 검색어 중 정규식 특수문자(예: . - 등)가 있다면 안전하게 이스케이프 처리
-                const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                
-                // 단어 경계(\b)를 사용하여 독립된 단어로 쓰인 경우만 매칭
-                const regex = new RegExp(`\\b${escapedTerm}\\b`, 'i');
-                
-                if (regex.test(titleStr) || regex.test(descStr)) {
-                    matchCount++;
-                }
-            });
-            
-            return { ...r, matchCount };
+            // AND 조건 & 부분 일치: 검색어(searchTerms)가 모두 포함되어야 함
+            return searchTerms.every(term => 
+                titleStr.includes(term) || descStr.includes(term)
+            );
         })
-        .filter(r => r.matchCount > 0) // 검색어가 하나라도 포함된 프로젝트만 필터링 (OR 조건 유지)
-        .sort((a, b) => {
-            // 1순위 정렬: 관련도 (포함된 hint 개수) 내림차순
-            if (b.matchCount !== a.matchCount) {
-                return b.matchCount - a.matchCount;
-            }
-            // 2순위 정렬: star 기준 내림차순
-            return (b.star || 0) - (a.star || 0);
-        });
+        .sort((a, b) => (b.star || 0) - (a.star || 0)); // star 기준 내림차순 정렬
 
     if (searchResults.length === 0) {
         console.log(pc.red('Error: No related project found.'));

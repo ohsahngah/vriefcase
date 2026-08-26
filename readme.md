@@ -135,9 +135,9 @@ Visit the vriefcase GitHub repository and submit a pull request (PR). You can al
 
 **Vriefcase** is currently operated by the developers who use it and the contributors who offer their full, unwavering support.
 - [OhSahngAh](https://github.com/ohsahngah) / Started Vriefcase
-- [Vriefcase](https://vriefcase.github.io) / Main Contributor
-- [The20thCenturyFarmer](the20thcenturyfarmer@gmail.com) / Main Contributor
-- [Castiel](bumchanpak@gmail.com) / Main Contributor
+- [Vriefcase](https://vriefcase.github.io) / Contributor
+- [The20thCenturyFarmer](the20thcenturyfarmer@gmail.com) / Contributor
+- [Castiel](bumchanpak@gmail.com) / Contributor
 
 <br />
 

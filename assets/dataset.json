@@ -469,9 +469,9 @@
       "star": 5
     },
     {
-      "name": "writeme",
-      "desc": "minimalist standard README.md template",
-      "repo": "github:ohsahngah/writeme",
+      "name": "readme",
+      "desc": "standard README.md template",
+      "repo": "github:vriefcase/readme",
       "url": null,
       "star": 4
     },
@@ -756,43 +756,43 @@
       "star": 1
     },
     {
-      "name": "Bootstrap",
-      "desc": "popular HTML, CSS, JS framework for responsive, mobile-first web development",
+      "name": "bootstrap",
+      "desc": "popular HTML/CSS/JS responsive web UI framework for responsive",
       "repo": "github:twbs/bootstrap",
       "url": "https://getbootstrap.com",
       "star": 5
     },
     {
       "name": "bootstrap-icons",
-      "desc": "Official open source SVG icon library for Bootstrap",
+      "desc": "bootstrap SVG icon library",
       "repo": "github:twbs/icons",
       "url": "https://icons.getbootstrap.com",
       "star": 3
     },
     {
       "name": "tailwindcss",
-      "desc": "A utility-first CSS framework for rapid UI development",
+      "desc": "utility-first CSS framework",
       "repo": "github:tailwindlabs/tailwindcss",
       "url": "https://tailwindcss.com",
       "star": 3
     },
     {
       "name": "bulma",
-      "desc": "Modern CSS framework based on Flexbox",
+      "desc": "flexbox-based modern CSS framework",
       "repo": "github:jgthms/bulma",
       "url": "https://bulma.io",
       "star": 3
     },
     {
       "name": "foundation-sites",
-      "desc": "The most advanced responsive front-end framework in the world",
+      "desc": "most advanced responsive front-end framework",
       "repo": "github:foundation/foundation-sites#develop",
       "url": "https://get.foundation",
       "star": 2
     },
     {
       "name": "Semantic-UI",
-      "desc": "UI component framework based around useful principles from natural language",
+      "desc": "natural language UI framework",
       "repo": "github:Semantic-Org/Semantic-UI",
       "url": "https://semantic-ui.com",
       "star": 3
@@ -806,7 +806,7 @@
     },
     {
       "name": "cash",
-      "desc": "An absurdly small jQuery alternative for modern browsers",
+      "desc": "minimal jQuery replacement",
       "repo": "github:fabiospampinato/cash",
       "url": null,
       "star": 3

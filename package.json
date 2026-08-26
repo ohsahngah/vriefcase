@@ -1,6 +1,6 @@
 {
     "name": "vriefcase",
-    "version": "0.3.1",
+    "version": "0.3.3",
     "description": "the virtual briefcase for all intelligent beings",
     "main": "vriefcase.js",
     "bin": {
@@ -36,6 +36,11 @@
         "email": "ohsahngah@gmail.com",
         "url": "https://ohsahngah.github.io"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ohsahngah/vriefcase.git"
+    },
+    "homepage": "https://vriefcase.github.io",
     "license": "MIT",
     "dependencies": {
         "degit": "^3.6.1",
