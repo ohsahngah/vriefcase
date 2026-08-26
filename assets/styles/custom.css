@@ -133,3 +133,11 @@ body, html {
     border-bottom-color: var(--cyber, #00ff00);
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
 }
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin: 0 0;
+}
