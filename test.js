@@ -5,6 +5,7 @@ async function main() {
     try {
         // Extract a project automatically by project name
         console.log('Extracting project...');
+        // await vriefcase('@twbs/bootstrap/main', 'ui/bootstrap');
         await vriefcase('@bootstrap');
         console.log('Extraction complete!\n');
 

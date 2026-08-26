@@ -77,6 +77,7 @@ async function main() {
     try {
         // Extract a project automatically by project name
         console.log('Extracting project...');
+        // await vriefcase('@twbs/bootstrap/main', 'ui/bootstrap');
         await vriefcase('@bootstrap');
         console.log('Extraction complete!\n');
 
@@ -143,6 +144,21 @@ Even if a directory with the same name already exists, vriefcase safely handles 
 $ vriefcase @bootstrap "../my-project" ❌
 $ vriefcase @bootstrap "C:\Windows\my-project" ❌
 ```
+
+<br />
+
+<b>💡 Direct Remote Repository Extraction</b><br />
+With **vriefcase**, you can also extract a remote repository directly using the owner and repository name:
+
+```bash
+$ vriefcase @twbs/bootstrap
+```
+
+You can also specify a branch by adding a slash (/), and of course, you can specify a specific directory and subdirectory as well:
+```bash
+$ vriefcase @twbs/bootstrap/main ui/bootstrap
+```
+If your local machine is authenticated with the remote repository, you can also extract private repositories.
 
 <br />
 
