@@ -35,7 +35,6 @@ body, html {
 /* 로고 이미지 스타일 */
 .logo {
     width: 100%;
-    max-width: 400px;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.2));
@@ -134,10 +133,11 @@ body, html {
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
 }
 
-.badges {
+/* .badges {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     justify-content: center;
     margin: 0 0;
-}
+    margin-top: -26px;
+} */
