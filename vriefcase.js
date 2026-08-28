@@ -19,7 +19,7 @@ const degitRaw = require('degit');
 // 안전하게 degit 모듈 호환성 처리
 const degit = typeof degitRaw === 'function' ? degitRaw : degitRaw.default;
 
-const ver = 'v0.3.5';
+const ver = 'v0.3.6';
 const DATA_URL = 'https://vriefcase.github.io/assets/dataset.json';
 
 // 시스템 임시 디렉터리에 캐시 저장(권한 이슈 방지)
@@ -165,7 +165,11 @@ function parseDirectRepo(input) {
         name: repoPart,
         repo: degitPath,
         star: 5,
-        isDirect: true
+        isDirect: true,
+        explicitHost: !!host,
+        user: user,
+        repoPart: repoPart,
+        branchPart: branchPart
     };
 }
 
@@ -284,11 +288,9 @@ async function extractSnapshotCore(repo, customPath, isCLI = true) {
         destPath = `${destPath}_${timestamp}`;
     }
 
-    let degitPath = repo.repo;
     let branchName = null;
-
-    if (degitPath && degitPath.includes('#')) {
-        const parts = degitPath.split('#');
+    if (repo.repo && repo.repo.includes('#')) {
+        const parts = repo.repo.split('#');
         branchName = parts[1];
     }
 
@@ -300,8 +302,15 @@ async function extractSnapshotCore(repo, customPath, isCLI = true) {
         }
     }
 
-    const emitter = degit(degitPath, { cache: false, force: true });
-    
+    // 프로바이더 자동 탐색 로직 적용
+    let providersToTry = [repo.repo];
+    if (repo.isDirect && !repo.explicitHost) {
+        providersToTry = ALLOWED_HOSTS.map(host => {
+            const branchSuffix = repo.branchPart ? `#${repo.branchPart}` : '';
+            return `${host}:${repo.user}/${repo.repoPart}${branchSuffix}`;
+        });
+    }
+
     let noticeTimer;
     if (isCLI) {
         noticeTimer = setTimeout(() => {
@@ -309,10 +318,30 @@ async function extractSnapshotCore(repo, customPath, isCLI = true) {
         }, 5000);
     }
 
-    try {
-        await emitter.clone(destPath);
-        if (isCLI) clearTimeout(noticeTimer);
+    let success = false;
+    let lastError = null;
+
+    for (const degitPath of providersToTry) {
+        const emitter = degit(degitPath, { cache: false, force: true });
         
+        try {
+            await emitter.clone(destPath);
+            success = true;
+            break; // 성공 시 반복문 즉시 종료
+        } catch (error) {
+            lastError = error;
+            // 저장소나 브랜치를 찾을 수 없거나 다운로드가 불가능한 경우 다음 프로바이더로 시도
+            if (error.code === 'MISSING_REF' || error.code === 'COULD_NOT_DOWNLOAD') {
+                continue;
+            }
+            // 권한 오류 등 다른 치명적인 오류 발생 시 즉시 중단
+            break;
+        }
+    }
+
+    if (isCLI) clearTimeout(noticeTimer);
+
+    if (success) {
         let removedItems = [];
         REMOVE_TARGETS.forEach(target => {
             const targetPath = path.join(destPath, target);
@@ -326,17 +355,23 @@ async function extractSnapshotCore(repo, customPath, isCLI = true) {
             const removedMsg = removedItems.length > 0 ? ` (Removed: ${removedItems.join(', ')})` : '';
             console.log(pc.green(`Successfully extracted project snapshot!${removedMsg}`));
         }
-    } catch (error) {
-        if (isCLI) clearTimeout(noticeTimer);
-        
+    } else {
         let errorMsg = 'Failed to extract project snapshot.';
-        if (error.code === 'MISSING_REF') {
-            errorMsg = 'Project inaccessible or specified branch not found.';
-        } else if (error.code === 'COULD_NOT_DOWNLOAD') {
-            errorMsg = 'Network connection and project info check required.';
-        } else {
-            errorMsg = `Details: ${error.message}`;
+        
+        if (lastError) {
+            if (lastError.code === 'MISSING_REF') {
+                errorMsg = 'Project inaccessible or specified branch not found.';
+            } else if (lastError.code === 'COULD_NOT_DOWNLOAD') {
+                errorMsg = 'Network connection and project info check required.';
+            } else {
+                errorMsg = `Details: ${lastError.message}`;
+            }
         }
+        
+        if (providersToTry.length > 1 && (lastError?.code === 'MISSING_REF' || lastError?.code === 'COULD_NOT_DOWNLOAD')) {
+            errorMsg = 'Project inaccessible or not found on GitHub, GitLab, and Bitbucket.';
+        }
+
         throw new Error(errorMsg);
     }
 }
